@@ -114,55 +114,48 @@ Transparency Center 中的 Platform Manipulation 专题页目前展示的是较�
 
 这也是为什么本项目应该把“申诉结果”和“实际功能状态”视为两个不同字段，而不是看到一封恢复邮件就结束调查。
 
-## 六、一个需要谨慎记录的新案例：通过 Privacy 表单报告“缺失的恢复指示”
+## 六、需要谨慎记录的 Threads 个案：缺失的恢复指示与 Privacy 表单
 
-Threads 上一位用户分享了一次近期的账号恢复经历。其描述是：多次正常申诉都收到类似“按照螢幕上的指示操作”的罐头回复，但登录后实际上没有出现任何可操作的指示。之后用户参考 Gemini 的建议，通过 X 的 **Privacy / Request X account information** 表单提交了一个“无法访问账号资料、因为系统没有显示恢复指示”的技术性问题；用户称随后账号恢复，追踪数据也恢复，并重新获得发文能力。
+Threads 上一位用户分享了一次近期的账号恢复经历。根据原帖自述：其账号多次正常申诉后收到类似“按照螢幕上的指示操作”的罐头回复，但登录后没有出现相应的可操作指示。随后，用户参考 Gemini 的建议，通过 X 的 **Privacy / Request X account information** 表单提交了与“无法访问账号资料、因为系统没有显示恢复指示”有关的问题；用户之后称账号恢复、相关数据恢复，并重新获得发文能力。
 
-原帖由用户提供，链接：
+原帖：
 
-- [Threads：X 账号奇迹般恢复的经验分享](https://www.threads.com/share/BAXxVkNoy-)
+- [Threads：X 账号恢复经验分享](https://www.threads.com/share/BAXxVkNoy-)
 
-对应的 X 官方表单目前仍然可以访问：
+对应的 X 官方表单：
 
 - [X Privacy：Requesting account information](https://help.x.com/en/forms/privacy/request-account-info/me)
 
-### 重要：这不是 X 官方认可的“解封捷径”
+### 这个案例应该如何理解
 
-这条案例**值得收录，但必须把它和“官方流程”分开**。
+这是一条**用户自述的时间线**，值得作为社区经验保存，但不能直接当成 X 官方确认的处理机制。
 
-X 当前的 Privacy 表单页面明确说明，该表单用于与 X Privacy Policy 相关的资料请求；页面同时明确提示：如果用户遇到的是 suspended / limited / restricted account，应使用官方 appeals form，而不是把 Privacy 表单当作账号申诉入口。X 还说明，使用错误的表单可能导致处理延迟。citeturn0search0turn0search9
+目前可以分成四层：
 
-因此，本案例目前最多能支持这样的表述：
-
-> **某位用户报告：在正常申诉没有出现可操作恢复指示的情况下，通过 Privacy / account information 表单提交与“无法访问账号资料、界面缺失恢复指示”有关的真实问题后，账号随后恢复。**
-
-它不能支持以下结论：
-
-- “Privacy 表单比申诉表单更容易解封”；
-- “Privacy 表单会把案件转给真人”；
-- “这样可以诱导工作人员打开后台”；
-- “一定会触发人工复核”；
-- “一定会触发 Arkose Challenge”；
-- “只要避免写 suspended / ban 就能成功”。
-
-尤其是原帖后半部分关于“法律义务 → 合规人员处理 → 为了修 Bug 打开后台 → 顺手发现误判 → 手动触发 Arkose Challenge”的解释，**属于发帖者的推测，而不是该案例能够证明的事实**。
-
-### 如果记录这个案例，应该怎样写？
-
-推荐使用四层结构：
-
-| 层级 | 目前能写什么 |
+| 层级 | 可以记录的内容 |
 | --- | --- |
-| 已确认/用户自述 | 用户多次收到罐头回复；用户称没有看到对应恢复指示；用户称通过 Privacy 表单提交后账号后来恢复。 |
-| 官方可验证 | X Privacy 表单确实存在，并且官方说明它用于 Privacy Policy / account information 请求。 |
-| 时间关系 | Privacy 表单提交发生在恢复之前。 |
-| 尚未证明 | Privacy 表单导致恢复、触发人工审核、触发 Arkose Challenge，或存在特定内部处理路径。 |
+| 用户自述 | 多次申诉收到类似恢复提示；用户称登录后没有看到相应指示；用户称提交 Privacy / account information 表单后账号后来恢复。 |
+| 官方可验证 | X 确实提供 Privacy / account information 表单。 |
+| 时间关系 | 表单提交发生在用户所称的账号恢复之前。 |
+| 尚未证明 | Privacy 表单导致恢复、转人工、触发 Arkose Challenge，或存在特定内部处理路径。 |
 
-### 一个很重要的安全原则
+### 不应从个案推出的结论
 
-如果用户确实存在 Privacy / data access 问题，可以如实使用相应表单；**不建议为了“绕过申诉系统”而虚构一个隐私问题**。
+不能据此断言：
 
-X 官方还提供专门的账号访问和 suspension appeal 表单，因此本项目应继续把官方 appeals 作为正常的第一路径，而把这个案例作为一个**未经证实、可能值得进一步观察的社区经验**。citeturn0search0turn0search10
+- Privacy 表单比正常申诉更容易解封；
+- Privacy 表单一定会转给真人；
+- 提交该表单一定会触发人工复核；
+- 提交后一定会触发 Arkose Challenge；
+- 只要不提 suspended / ban 就能成功。
+
+原帖中关于“法律义务 → 合规人员 → 后台检查 → 发现误判 → 手动触发 Arkose Challenge”等内容，如果出现，也应标记为**发帖者的推测**，而不是案例事实。
+
+### 官方流程与社区经验要分开
+
+如果用户确实需要访问自己的 X 账号数据或存在真实的 Privacy / data access 问题，可以如实使用相应表单。但不建议为了绕过账号申诉流程而虚构隐私问题。
+
+X 官方仍然将 suspended / limited / restricted account 的申诉作为正常路径；因此这个 Threads 案例更适合作为**补充观察材料**，而不是“解封捷径”。
 
 ## 七、不要把个案现象写成因果结论
 
