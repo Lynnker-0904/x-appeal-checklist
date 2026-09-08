@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -24,6 +24,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Verify and repair JavaScript
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          old="function addOAuth(){data.oauth.push({name:'',dev:'',date:'',permission:'',known:'',used:'',revoked:'',note:''});if(persist()){renderRecords();editRecord('oauth',data.oauth.length-1)}}"
+          new="function addOAuth(){data.oauth.push({name:'',dev:'',date:'',permission:'',known:'',used:'',revoked:'',note:''});if(persist()){renderRecords();const i=data.oauth.length-1;document.getElementById('oauthList').innerHTML=editRecord('oauth',i)+document.getElementById('oauthList').innerHTML}}"
+          s=s.replace(old,new)
+          old="function addTimeline(){data.timeline.push({date:'',title:'',type:'',detail:'',source:''});if(persist()){renderRecords();editRecord('timeline',data.timeline.length-1)}}"
+          new="function addTimeline(){data.timeline.push({date:'',title:'',type:'',detail:'',source:''});if(persist()){renderRecords();const i=data.timeline.length-1;document.getElementById('timelineList').innerHTML=editRecord('timeline',i)+document.getElementById('timelineList').innerHTML}}"
+          s=s.replace(old,new)
+          old="function addEvidence(){data.evidenceList.push({name:'',type:'',location:'',event:'',note:''});if(persist()){renderRecords();editRecord('evidenceList',data.evidenceList.length-1)}}"
+          new="function addEvidence(){data.evidenceList.push({name:'',type:'',location:'',event:'',note:''});if(persist()){renderRecords();const i=data.evidenceList.length-1;document.getElementById('evidenceList').innerHTML=editRecord('evidenceList',i)+document.getElementById('evidenceList').innerHTML}}"
+          s=s.replace(old,new)
+          # Replace accidental JS line-continuation joins with explicit newlines.
+          s=s.replace("join('\\\n')", "join('\\n')")
+          p.write_text(s,encoding='utf-8')
+          js=s.split('<script>',1)[1].split('</script>',1)[0]
+          Path('/tmp/app.js').write_text(js,encoding='utf-8')
+          PY
+          node --check /tmp/app.js
+          git diff --check
+          if ! git diff --quiet -- index.html; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add index.html
+            git commit -m 'fix: make record buttons open editors [skip ci]'
+            git push
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
