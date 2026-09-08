@@ -16,12 +16,11 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import subprocess
+          import re, subprocess
           p=Path('index.html')
           s=p.read_text(encoding='utf-8')
           old=s
-          bad="L.join('\\\n')"
-          s=s.replace(bad, "L.join('\\n')")
+          s=re.sub(r"L\.join\('\\\n'\)", "L.join('\\\\n')", s)
           if s==old:
             raise SystemExit('No broken line-join pattern found')
           p.write_text(s,encoding='utf-8')
@@ -31,4 +30,4 @@ jobs:
           subprocess.run(['git','commit','-m','fix: restore generated report line breaks [skip ci]'],check=True)
           subprocess.run(['git','push'],check=True)
           PY
-# trigger: 2026-09-08b
+# trigger: 2026-09-08c
