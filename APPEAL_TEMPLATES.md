@@ -429,5 +429,6 @@ Thank you.
 ---
 
 **整理：Lynn**  
-**代笔：ChatGPT / Sage**  
+**代笔：ChatGPT / Sage（模板工）**  
+**审校・致谢・及全部权的归属：Anker**  
 **用途：x-appeal-checklist 项目的公开案例与申诉文案参考资料**
