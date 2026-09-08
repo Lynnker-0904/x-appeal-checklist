@@ -91,6 +91,22 @@
 
 > 本文档由 Lynn 整理思路，并委托 **ChatGPT / Sage 代笔**。其中的 Reddit 案例属于公开用户经验，不代表 X 官方政策，也不能保证某种方法能够恢复账号。
 
+### 补充参考：Threads 上的 Privacy 表单个案
+
+另有一篇 Threads 用户经验帖，描述了一个与本项目近期调查高度相关的情形：账号收到“按照屏幕上的指示操作来恢复访问权限”的提示，但用户称登录后没有出现相应的可操作指示；在多次正常申诉没有解决后，用户称通过 X 的 Privacy / account information 表单提交了“无法访问账号资料、因为系统没有显示恢复指示”的问题，之后账号恢复并重新获得发文能力。
+
+- [Threads：X 账号恢复经验分享](https://www.threads.com/share/BAXxVkNoy-)
+
+这个案例**只作为用户自述的时间线和社区经验保存**。它不能证明 Privacy 表单比正常申诉更容易解封，也不能证明一定会转人工、触发 Arkose Challenge，或存在某种特定的 X 内部处理路径。
+
+X 的官方 Privacy / account information 表单可以作为真实数据访问或隐私问题的渠道，但如果用户实际遇到的是 suspended / limited / restricted account，应优先使用 X 官方提供的账号申诉流程；不要为了绕过申诉流程而虚构隐私问题。
+
+更值得参考的是它的调查结构：
+
+**系统要求 A → 实际界面出现 B → A 与 B 不一致 → 保存截图/时间线 → 描述具体问题 → 请求复核或修复。**
+
+详细的官方规则、社区案例以及这个 Threads 个案的事实/推测分层，见 **[官方规则与公开案例资料](official-and-community-references.md)**。
+
 ## BBB.org 申诉：可以作为额外的外部投诉渠道
 
 在我们检索 X 相关公开投诉时，可以看到不少用户会在 **[Better Business Bureau（BBB）](https://www.bbb.org/)** 的 X Corp 页面提交投诉，把账号封禁、无法获得有效人工支持、订阅费用等问题作为 marketplace complaint 的一部分提出。BBB 的 X Corp 档案目前还显示，BBB 在 2026 年开始审查 X Corp 的相关投诉模式；BBB 指出的投诉主题包括缺乏有意义的封禁解释、申诉/客服渠道困难、封禁后继续计费以及账号恢复问题等。
@@ -186,6 +202,7 @@
 x-appeal-checklist/
 ├── index.html                    # 离线自查工具
 ├── reddit-appeal-notes.md        # Reddit 案例与 Family Tree 调查笔记
+├── official-and-community-references.md # 官方规则与公开案例资料
 ├── INVESTIGATION_FRAMEWORK.md    # 调查方法与判断框架
 └── README.md                     # 项目说明
 ```
