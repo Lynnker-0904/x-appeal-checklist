@@ -1,5 +1,7 @@
 # X 账号申诉前自查表
 
+[🇨🇳 中文](README.md) · [🇬🇧 English](README_EN.md)
+
 一个 **offline-first、单文件、无需后端** 的 X / Twitter 账号封禁申诉前调查工作台。
 
 > 本项目不是 X 官方工具，也不能判断账号是否违规、不能证明某个 OAuth 应用导致封禁。它的目标是帮助用户把零散线索整理成一条可核查的事实链。
@@ -86,6 +88,7 @@
 - 本地 `localStorage` 保存
 - 重置本次调查
 - 系统深色模式与响应式界面
+- **中文 / English 界面切换**
 
 ## 公开信息收集
 
@@ -174,7 +177,8 @@ x-appeal-checklist/
 ├── reddit-appeal-notes.md               # Reddit 案例与 Family Tree 调查笔记
 ├── official-and-community-references.md # 官方规则与公开案例资料
 ├── INVESTIGATION_FRAMEWORK.md           # 调查方法与判断框架
-└── README.md                             # 项目说明
+├── README.md                             # 中文项目说明
+└── README_EN.md                          # English project documentation
 ```
 
 ## 开源与署名
