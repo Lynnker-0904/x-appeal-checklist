@@ -16,7 +16,7 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re, subprocess
+          import subprocess
           p=Path('index.html')
           s=p.read_text(encoding='utf-8')
           old=s
@@ -35,3 +35,4 @@ jobs:
           subprocess.run(['git','commit','-m','fix: repair AI prompt line breaks [skip ci]'],check=True)
           subprocess.run(['git','push'],check=True)
           PY
+# trigger: 2026-09-08
