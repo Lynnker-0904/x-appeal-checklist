@@ -1,0 +1,54 @@
+name: One-shot functional fix and UI polish
+on:
+  push:
+    paths:
+      - .github/workflows/one-shot-polish.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch app
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, subprocess
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          old=s
+          # Functional fix: adding a record immediately opens its inline editor.
+          s=s.replace("function addOAuth(){data.oauth.push({name:'',dev:'',date:'',permission:'',known:'',used:'',revoked:'',note:''});if(persist())renderRecords();}","function addOAuth(){data.oauth.push({name:'',dev:'',date:'',permission:'',known:'',used:'',revoked:'',note:''});if(persist()){renderRecords();editRecord('oauth',data.oauth.length-1)}}")
+          s=s.replace("function addTimeline(){data.timeline.push({date:'',title:'',type:'',detail:'',source:''});if(persist())renderRecords();}","function addTimeline(){data.timeline.push({date:'',title:'',type:'',detail:'',source:''});if(persist()){renderRecords();editRecord('timeline',data.timeline.length-1)}}")
+          s=s.replace("function addEvidence(){data.evidenceList.push({name:'',type:'',location:'',event:'',note:''});if(persist())renderRecords();}","function addEvidence(){data.evidenceList.push({name:'',type:'',location:'',event:'',note:''});if(persist()){renderRecords();editRecord('evidenceList',data.evidenceList.length-1)}}")
+          # Make the page feel like a focused investigation workspace rather than a generic form.
+          marker='</style>'
+          css='''\n/* v2 visual polish */\n:root{--accent:#2563eb;--accent2:#4f46e5;--soft:#eff6ff;--radius:14px;--shadow:0 4px 18px rgba(15,23,42,.055)}\nbody{background:linear-gradient(180deg,#f8fafc 0,#f1f5f9 48%,#f8fafc 100%);letter-spacing:.005em}\n.wrap{max-width:1040px;padding:28px 18px 80px}\n.hero{position:relative;overflow:hidden;border-radius:20px;padding:32px 34px;background:linear-gradient(135deg,#0f172a 0%,#172554 62%,#1e3a8a 100%);box-shadow:0 18px 45px rgba(15,23,42,.14)}\n.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #ffffff18;border-radius:50%;right:-80px;top:-100px;box-shadow:0 0 0 38px #ffffff08,0 0 0 76px #ffffff04}\nh1{font-size:clamp(30px,5vw,44px);letter-spacing:-.035em}\n.hero p{max-width:760px;color:#dbe4f0}\n.notice{max-width:850px;background:#ffffff0d;border-color:#ffffff1c}\n.toolbar{top:8px;padding:9px 0;background:#f8fafce8}\n.btn{border-radius:9px;font-weight:650;box-shadow:0 1px 1px #0f172a08}\n.btn.primary{box-shadow:0 4px 12px #2563eb2b}\n.btn:hover{transform:translateY(-1px);box-shadow:0 5px 16px #0f172a12}\n.progress,.section{border-radius:15px;box-shadow:0 3px 16px rgba(15,23,42,.045)}\n.progress{padding:15px 17px}\n.section{margin:11px 0}\n.section summary{padding:15px 17px;font-size:16px;letter-spacing:-.01em}\n.body{padding:0 17px 19px}\n.num{font-weight:750;background:#eaf1ff;color:#1d4ed8}\n.item{padding:11px 0}\n.record{border-radius:11px;padding:14px;border-color:#dfe4eb;transition:.15s}\n.record:hover{border-color:#c7d2e0;box-shadow:0 5px 16px #0f172a0b}\n.recordhead strong{font-size:15px}\n.tag{background:#f1f5f9;color:#475569}\n.state{border-radius:8px}\n.editgrid{gap:10px}\n.editgrid label{color:#64748b;font-weight:600}\n.editgrid input,.editgrid textarea,.field textarea,.note,.ai-box textarea{border-radius:9px;outline:none;transition:.15s}\n.editgrid input:focus,.editgrid textarea:focus,.field textarea:focus,.note:focus,.ai-box textarea:focus{border-color:#60a5fa;box-shadow:0 0 0 3px #3b82f61a}\n.empty{background:#f8fafc;border-color:#cbd5e1}\n.oauth-guide{border-color:#d7e1f5;background:#f8fbff;border-radius:12px}\n.oauth-guide .warning{border-left-color:#f59e0b;background:#fffaf0}\n.ai-box{border-color:#dbe4f5;background:linear-gradient(135deg,#f8fbff,#f8f8ff);border-radius:13px}\n.ai-box strong{color:#1e3a8a}\n.report{border-radius:11px}\n.footer{padding-top:8px}\n@media(prefers-color-scheme:dark){body{background:linear-gradient(180deg,#0b1020,#0d1117 55%,#0b1020)}:root{--accent:#60a5fa;--accent2:#818cf8;--soft:#172554}.toolbar{background:#0d1117e8}.hero{box-shadow:0 18px 45px #0005}.record{border-color:#303846}.record:hover{border-color:#465164}.num{background:#172554;color:#93c5fd}.tag{background:#222934;color:#cbd5e1}.empty{background:#11161d;border-color:#3b4554}.oauth-guide{background:#101827;border-color:#293c59}.oauth-guide .warning{background:#211d13}.ai-box{background:linear-gradient(135deg,#111a2b,#171827);border-color:#303a59}.ai-box strong{color:#bfdbfe}}\n@media(max-width:700px){.wrap{padding:14px 11px 55px}.hero{padding:25px 19px;border-radius:17px}.toolbar{top:0}.toolbar .btn{min-height:40px}.section summary{padding:14px}.body{padding:0 13px 17px}}\n'''
+          if marker not in s: raise SystemExit('style marker missing')
+          if '/* v2 visual polish */' not in s: s=s.replace(marker,css+marker,1)
+          # Fix HTML structure: each details wrapper must close before its section closes.
+          s=s.replace('</div></section><section class="section"><details open><summary><span class="num">03</span>', '</div></details></section><section class="section"><details open><summary><span class="num">03</span>')
+          s=s.replace('</div></section><section class="section"><details open><summary><span class="num">06B</span>', '</div></details></section><section class="section"><details open><summary><span class="num">06B</span>')
+          s=s.replace('</div></section><section class="section"><details open><summary><span class="num">07</span>', '</div></details></section><section class="section"><details open><summary><span class="num">07</span>')
+          s=s.replace('</div></section><section class="section"><details open><summary><span class="num">AI</span>', '</div></details></section><section class="section"><details open><summary><span class="num">AI</span>')
+          s=s.replace('</div></section><section class="section"><details open><summary><span class="num">REPORT</span>', '</div></details></section><section class="section"><details open><summary><span class="num">REPORT</span>')
+          if s==old: raise SystemExit('No changes made')
+          p.write_text(s,encoding='utf-8')
+          subprocess.run(['python','-c','import pathlib; s=pathlib.Path("index.html").read_text(); assert s.count("<script>")==s.count("</script>")==1; assert s.count("<style>")==s.count("</style>")==1; assert s.count("function addOAuth") == 1; assert s.count("function addTimeline") == 1; assert s.count("function addEvidence") == 1; assert "function update(){" in s; assert "reportLines().join(\\'\\n\\')" in s'],check=True)
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          subprocess.run(['git','add','index.html'],check=True)
+          subprocess.run(['git','commit','-m','fix: make record adding reliable and polish UI [skip ci]'],check=True)
+          subprocess.run(['git','push'],check=True)
+          PY
+      - name: Remove one-shot workflow
+        run: |
+          rm -f .github/workflows/one-shot-polish.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m 'chore: remove one-shot polish workflow [skip ci]' || true
+          git push
