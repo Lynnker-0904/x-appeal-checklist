@@ -69,6 +69,20 @@
 
 一键生成可复制、打印或保存为 PDF 的调查摘要。
 
+## Reddit 申诉经验与调查笔记
+
+项目另外整理了一份 **[Reddit 申诉经验与调查笔记](reddit-appeal-notes.md)**，记录公开 Reddit 案例中值得参考的申诉经验，并把我们这次调查中的 **Family Tree / Twitter Family / Round Year Fun** 问题一起归档。
+
+这份笔记特别强调：
+
+- Reddit 用户的成功经验是个案，不是“解封公式”；
+- 多次申诉、重新组织材料、仔细阅读 X 的自动回复等经验可以作为参考，但不能直接推导因果；
+- 不应复制他人的申诉原文，更不能把某种措辞或申诉频率当成必胜技巧；
+- **Family Tree / Twitter Family 相关 OAuth 记录目前应作为调查线索，而不是直接写成封禁原因；**
+- OAuth 授权、权限范围、实际使用行为与 X 的 `inauthentic behavior` 判断之间，需要分别寻找证据。
+
+> 本文档由 Lynn 整理思路，并委托 **ChatGPT / Sage 代笔**。其中的 Reddit 案例属于公开用户经验，不代表 X 官方政策，也不能保证某种方法能够恢复账号。
+
 ## 调查框架
 
 项目现在同时提供一份独立的 [调查框架](INVESTIGATION_FRAMEWORK.md)，把自查表背后的判断方法明确化：
@@ -133,6 +147,7 @@
 .
 ├── index.html                    # 完整的离线调查工作台
 ├── INVESTIGATION_FRAMEWORK.md    # 调查方法与判断框架
+├── reddit-appeal-notes.md        # Reddit 申诉经验与 Family Tree 调查笔记
 └── README.md                     # 项目说明
 ```
 
@@ -140,7 +155,7 @@
 
 当前为早期可用版本，重点已经从单纯的“勾选清单”扩展为：
 
-**Checklist + OAuth Ledger + Timeline + Evidence Ledger + Appeal Draft + Report + Investigation Framework**
+**Checklist + OAuth Ledger + Timeline + Evidence Ledger + Appeal Draft + Report + Investigation Framework + Reddit Case Notes**
 
 后续可以继续增加更细的字段、排序、过滤、时间线可视化、报告导出格式和 GitHub Pages 自动部署。
 
