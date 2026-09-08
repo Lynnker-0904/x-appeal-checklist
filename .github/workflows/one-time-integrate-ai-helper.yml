@@ -1,0 +1,46 @@
+name: One-time integrate AI appeal helper
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/one-time-integrate-ai-helper.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Integrate helper
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          if 'id="aiPrompt"' in s:
+              print('AI helper already present')
+              raise SystemExit(0)
+          marker='<section class="section"><details open><summary><span class="num">REPORT</span> 自查报告</summary>'
+          block='''<section class="section"><details open><summary><span class="num">AI</span> 用 AI 协助整理申诉信</summary><div class="body"><p class="desc">完成自查后，可以把下面这段提示词复制给 GPT、Claude 等 AI，协助你讨论申诉信怎么写。AI 不会替你判断封禁原因。</p><div class="oauth-guide"><strong>建议发送给 AI 的提示词</strong><textarea id="aiPrompt" style="width:100%;min-height:240px;margin-top:10px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--card);color:var(--text);font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;resize:vertical"></textarea><div class="recordactions" style="margin-top:9px"><button class="btn primary" onclick="buildAIPrompt()">生成 / 更新提示词</button><button class="btn" onclick="copyAIPrompt()">复制提示词</button></div><div class="warning">⚠️ 发送前请检查个人信息。不要向 AI 提供密码、验证码、恢复码或其他敏感凭据。让 AI 区分事实、异常信号和推测，不要把 OAuth 授权与封禁直接写成因果关系。</div></div></div></details></section>'''
+          if marker not in s: raise SystemExit('REPORT marker not found')
+          s=s.replace(marker,block+marker,1)
+          marker2='function makeReport()'
+          code='''function buildAIPrompt(){const report=reportLines().join('\\n');const appeal=document.getElementById('appeal')?.value||'';const prompt=`你是 X 账号申诉信编辑助手。请基于下面的自查资料，协助我整理一封简洁、事实性、诚实的账号申诉信。\\n\\n要求：\\n1. 只使用资料中明确支持的事实，不虚构任何事件、权限、行为或平台规则。\\n2. 明确区分“已确认事实”“异常信号”和“待调查推测”。\\n3. 不要因为某个 OAuth 应用存在、授权时间接近异常事件，就直接推断它导致封禁；如证据不足，请明确写成未知或待复核。\\n4. 不要代替平台判断是否违规；重点写清账号情况、已采取的安全措施，以及请求人工复核的事项。\\n5. 如果资料不足，先列出最需要补充的 3—5 项信息，再给出申诉信草稿。\\n6. 语言简洁、礼貌，不情绪化，不夸大，不威胁平台。\\n\\n【自查报告】\\n${report}\\n\\n【我已经填写的申诉说明】\\n${appeal}\\n\\n请先指出可能存在的事实缺口，然后给出一版可以直接修改后提交的申诉信。`;document.getElementById('aiPrompt').value=prompt}
+function copyAIPrompt(){const el=document.getElementById('aiPrompt');if(!el.value)buildAIPrompt();if(!navigator.clipboard){alert('当前浏览器不支持一键复制，请手动复制提示词。');return}navigator.clipboard.writeText(el.value).then(()=>alert('提示词已复制。')).catch(()=>alert('复制失败，请手动复制提示词。'))}
+'''
+          if marker2 not in s: raise SystemExit('makeReport marker not found')
+          s=s.replace(marker2,code+marker2,1)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit integrated page
+        run: |
+          if git diff --quiet -- index.html; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "feat: add AI appeal drafting helper [skip ci]"
+          git push
