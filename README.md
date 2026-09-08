@@ -114,9 +114,10 @@
 
 ## 参考资料
 
-项目目前已有四份互相分工的资料：
+项目目前已有五份互相分工的资料：
 
 - [信息收集](INFORMATION_COLLECTION.md)：公开案例、关键词、来源和主要信息收集手段；
+- [申诉成功模板与来源](APPEAL_TEMPLATES.md)：公开成功案例、失败对照、可参考申诉结构，以及基于案例比较得出的暂时结论；
 - [Reddit 申诉经验与调查笔记](reddit-appeal-notes.md)：Reddit 个案与 Family Tree / Twitter Family 调查笔记；
 - [官方规则与公开案例资料](official-and-community-references.md)：官方规则与精选社区案例；
 - [调查框架](INVESTIGATION_FRAMEWORK.md)：事实、异常信号、推测与无法验证内容的判断框架。
@@ -169,6 +170,7 @@ BBB 不是政府监管机构，也不能强制 X 解封账号。因此，本项�
 x-appeal-checklist/
 ├── index.html                           # 离线自查工具
 ├── INFORMATION_COLLECTION.md            # 公开案例与信息收集
+├── APPEAL_TEMPLATES.md                  # 申诉模板与公开案例比较
 ├── reddit-appeal-notes.md               # Reddit 案例与 Family Tree 调查笔记
 ├── official-and-community-references.md # 官方规则与公开案例资料
 ├── INVESTIGATION_FRAMEWORK.md           # 调查方法与判断框架
