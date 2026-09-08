@@ -29,8 +29,24 @@ function download(name,text,type){const blob=new Blob([text],{type});const a=doc
 function exportJSON(){download('x-appeal-checklist.json',JSON.stringify({...data,checks:collectChecks(),appeal:document.getElementById('appeal').value},null,2),'application/json')}
 function collectChecks(){const o={};sections.forEach((sec,si)=>sec[3].forEach((_,ii)=>{const c=document.querySelector(`input[name="s${si}_${ii}"]:checked`);const n=document.querySelector(`[data-note="${si}_${ii}"]`);o[`${si}_${ii}`]={state:c?c.value:'',note:n?n.value:''}}));appealItems.forEach((_,i)=>o[`a${i}`]=document.getElementById(`a${i}`).checked);return o}
 function exportMarkdown(){const L=['# X 账号申诉前自查报告','',`生成时间：${new Date().toLocaleString()}`,'','## 检查项'];sections.forEach((sec,si)=>{L.push(`### ${sec[0]} ${sec[1]}`);sec[3].forEach((item,ii)=>{const c=document.querySelector(`input[name="s${si}_${ii}"]:checked`);const n=document.querySelector(`[data-note="${si}_${ii}"]`);L.push(`- ${item}：${c?c.value:'未填写'}${n&&n.value?'；备注：'+n.value:''}`)})});L.push('','## OAuth 授权记录');data.oauth.forEach(x=>L.push(`- **${x.name||'未命名应用'}**：开发者 ${x.dev||'未记录'}；日期 ${x.date||'未记录'}；权限 ${x.permission||'未记录'}；认识 ${x.known||'未记录'}；实际使用 ${x.used||'未记录'}；已撤销 ${x.revoked||'未记录'}${x.note?'；'+x.note:''}`));L.push('','## 事件时间线');data.timeline.slice().sort(sortDate).forEach(x=>L.push(`- ${x.date||'未记录'}｜${x.title||'未命名事件'}｜${x.type||'未记录'}｜${x.detail||'未记录'}｜来源：${x.source||'未记录'}`));L.push('','## 证据台账');data.evidenceList.forEach(x=>L.push(`- **${x.name||'未命名证据'}**：类型 ${x.type||'未记录'}；位置 ${x.location||'未记录'}；对应事件 ${x.event||'未记录'}；${x.note||''}`));L.push('','## 申诉材料准备');appealItems.forEach((x,i)=>L.push(`- [${document.getElementById(`a${i}`).checked?'x':' '}] ${x}`));L.push('','## 申诉说明',document.getElementById('appeal').value||'未填写','','> 本报告用于整理事实和调查线索，不证明任何第三方应用导致封禁。');download('x-appeal-checklist.md',L.join('\n'),'text/markdown;charset=utf-8')}
-function buildAIPrompt(){const report=reportLines().join('\n');const appeal=document.getElementById('appeal')?.value||'';const prompt=`你是 X 账号申诉信编辑助手。请基于下面的自查资料，协助我整理一封简洁、事实性、诚实的账号申诉信。\n\n要求：\n1. 只使用资料中明确支持的事实，不虚构任何事件、权限、行为或平台规则。\n2. 明确区分“已确认事实”“异常信号”和“待调查推测”。\n3. 不要因为某个 OAuth 应用存在、授权时间接近异常事件，就直接推断它导致封禁；如证据不足，请明确写成未知或待复核。\n4. 不要代替平台判断是否违规；重点写清账号情况、已采取的安全措施，以及请求人工复核的事项。\n5. 如果资料不足，先列出最需要补充的 3—5 项信息，再给出申诉信草稿。\n6. 语言简洁、礼貌，不情绪化，不夸大，不威胁平台。\n\n【自查报告】\n${report}\n\n【我已经填写的申诉说明】\n${appeal}\n\n请先指出可能存在的事实缺口，然后给出一版可以直接修改后提交的申诉信。`;document.getElementById('aiPrompt').value=prompt}
-async function copyAIPrompt(){const el=document.getElementById('aiPrompt');if(!el.value)buildAIPrompt();if(!navigator.clipboard||!navigator.clipboard.writeText){el.focus();el.select();alert('当前浏览器不支持一键复制，请手动复制提示词。');return}try{await navigator.clipboard.writeText(el.value);alert('提示词已复制。')}catch(e){el.focus();el.select();alert('复制失败，请手动复制提示词。')}}
+function buildAIPrompt(){const report=reportLines().join('\n');const appeal=document.getElementById('appeal')?.value||'';const prompt=`你是 X 账号申诉信编辑助手。请基于下面的自查资料，协助我整理一封简洁、事实性、诚实的账号申诉信。
+
+要求：
+1. 只使用资料中明确支持的事实，不虚构任何事件、权限、行为或平台规则。
+2. 明确区分“已确认事实”“异常信号”和“待调查推测”。
+3. 不要因为某个 OAuth 应用存在、授权时间接近异常事件，就直接推断它导致封禁；如证据不足，请明确写成未知或待复核。
+4. 不要代替平台判断是否违规；重点写清账号情况、已采取的安全措施，以及请求人工复核的事项。
+5. 如果资料不足，先列出最需要补充的 3—5 项信息，再给出申诉信草稿。
+6. 语言简洁、礼貌，不情绪化，不夸大，不威胁平台。
+
+【自查报告】
+${report}
+
+【我已经填写的申诉说明】
+${appeal}
+
+请先指出可能存在的事实缺口，然后给出一版可以直接修改后提交的申诉信。`;document.getElementById('aiPrompt').value=prompt}
+function copyAIPrompt(){const el=document.getElementById('aiPrompt');if(!el.value)buildAIPrompt();if(!navigator.clipboard||!navigator.clipboard.writeText){el.focus();el.select();alert('当前浏览器不支持一键复制，请手动复制提示词。');return}navigator.clipboard.writeText(el.value).then(()=>alert('提示词已复制。')).catch(()=>{el.focus();el.select();alert('复制失败，请手动复制提示词。')})}
 function clearAll(){if(!confirm('确定清空本地保存的全部自查数据吗？建议先导出 JSON。'))return;localStorage.removeItem(key);location.reload()}
 document.getElementById('file').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const p=JSON.parse(r.result);if(!p||typeof p!=='object'||Array.isArray(p)||!Array.isArray(p.oauth)||!Array.isArray(p.timeline)||!Array.isArray(p.evidenceList)||p.oauth.some(x=>!x||typeof x!=='object'||Array.isArray(x))||p.timeline.some(x=>!x||typeof x!=='object'||Array.isArray(x))||p.evidenceList.some(x=>!x||typeof x!=='object'||Array.isArray(x)))throw new Error('invalid');data={...data,...p,schemaVersion};persist();render();alert('JSON 已导入。')}catch(err){alert('导入失败：JSON 格式不符合本工具的数据结构。')}};r.readAsText(f)};
 render();
