@@ -1,10 +1,27 @@
 # X Appeal Pre-Submission Checklist
 
-[🇬🇧 English](README_EN.md) · [🇨🇳 中文](README.md)
+**🇨🇳 中文 / 🇬🇧 English**
+
+- [中文 README](README.md)
+- **English README**
 
 An **offline-first, single-file, no-backend** investigation workspace for people preparing an appeal after an X / Twitter account suspension, restriction, or read-only state.
 
 > This is not an X product and cannot determine whether an account violated a rule. It cannot prove that an OAuth application, IP address, VPN, device, or other third-party factor caused a suspension. Its purpose is to help turn scattered clues into a traceable record.
+
+## A note for English-speaking users
+
+This project was built by a Chinese user, and the maintainer does not have the time or language bandwidth to manually explain every part of the investigation to every person who finds the project.
+
+**If you are not sure how to use this repository, the easiest option is to give the entire repository to an AI assistant and ask it to walk through the investigation with you.**
+
+For example, you can tell the AI:
+
+> “Please read this repository first. I have an X account suspension. Help me use the checklist and investigation framework to reconstruct what happened. Separate confirmed facts, anomalies, hypotheses, and unknowns. Do not invent any facts.”
+
+The repository is deliberately structured so that an AI can read the methodology, public-case research, appeal examples, and investigation framework together. You can also paste your own screenshots, emails, timelines, or notes into the conversation and ask the AI to help organize them.
+
+This is not a substitute for official X support. It is simply a practical way to use the project when the maintainer cannot provide one-on-one assistance.
 
 ## What this project does
 
