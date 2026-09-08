@@ -12,16 +12,16 @@
 
 更可靠的共同点是：
 
-- 不要把一次自动拒绝理解成永远没有机会；一些用户在后续申诉中成功恢复。citeturn0reddit21turn0reddit27turn0reddit31
-- 申诉内容越接近“事实核对 + 请求复核”，通常比纯粹发泄更容易形成清晰的信息。Reddit 用户确实有人描述过第一次过于防御、第二次重新整理后最终恢复。citeturn0reddit27
-- 如果平台的回复明确指出了一个可执行的恢复条件，应直接回应那个条件，而不是继续泛泛解释。近期案例中，有用户因为无法执行邮件里要求的操作而在后续申诉中把这个矛盾写清楚，最终恢复。citeturn0reddit23
-- 不要相信声称可以“帮你解封”的陌生 WhatsApp、Discord 或私人账号。公开讨论中也有人明确提醒，这类联系方式不是官方支持渠道，可能是诈骗。citeturn0search1
+- 不要把一次自动拒绝理解成永远没有机会；一些用户在后续申诉中成功恢复。
+- 申诉内容越接近“事实核对 + 请求复核”，通常比纯粹发泄更容易形成清晰的信息。Reddit 用户确实有人描述过第一次过于防御、第二次重新整理后最终恢复。
+- 如果平台的回复明确指出了一个可执行的恢复条件，应直接回应那个条件，而不是继续泛泛解释。近期案例中，有用户因为无法执行邮件里要求的操作而在后续申诉中把这个矛盾写清楚，最终恢复。
+- 不要相信声称可以“帮你解封”的陌生 WhatsApp、Discord 或私人账号。`r/twitterhelp` 的公开讨论中也有专门提醒用户不要联系陌生人寻求解封帮助的帖子。
 
 ## 2. Reddit 成功案例里反复出现的几类经验
 
 ### 2.1 不要只写“我是人类”，尽量提供可核对的事实
 
-有人只写了类似“Why was I suspended? I'm human”这样的极短申诉，后来账号确实恢复；但该用户自己也认为恢复很可能与当时的大规模误封有关，而不一定是申诉文字造成的。citeturn0reddit29
+有人只写了类似“Why was I suspended? I'm human”这样的极短申诉，后来账号确实恢复；但该用户自己也认为恢复很可能与当时的大规模误封有关，而不一定是申诉文字造成的。
 
 这类案例说明：**申诉成功不能反推某句话就是有效因素。**
 
@@ -37,7 +37,7 @@
 
 ### 2.2 如果第一版写得不好，可以重新整理
 
-2026 年 4 月的一篇成功案例中，作者描述自己第一次申诉时因为愤怒而写得比较被动攻击、防御性很强；后来参考社区经验，重新组织成更专业、更清楚的申诉，第三轮后账号恢复。作者本人也承认无法确定“礼貌”本身是不是决定因素。citeturn0reddit27
+2026 年的成功案例中，有用户描述自己第一次申诉时写得比较混乱，后续重新组织申诉内容后最终恢复。另一些用户则表示自己无法判断究竟是哪一次申诉触发了恢复。
 
 所以我们的工具采用的是：
 
@@ -47,7 +47,7 @@
 
 ### 2.3 后续申诉有时仍然有意义，但不要把频率当成科学规律
 
-公开案例中，有用户申诉 4–5 次后恢复，也有用户持续数月、反复申诉后恢复。citeturn0reddit21turn0reddit25turn0reddit26
+公开案例中，有用户申诉 4–5 次后恢复，也有用户持续数月、反复申诉后恢复。
 
 但这些案例无法证明“每隔 X 天提交一次一定更有效”。不同用户、不同封禁原因、不同时间段可能进入完全不同的审核流程。
 
@@ -59,7 +59,7 @@
 
 这是目前比较值得保留的一条经验。
 
-近期案例中，有用户注意到 X 的自动回复写着“登录账号并按照步骤恢复”，但账号实际上处于永久暂停状态、无法执行那个步骤。第三次申诉时，他把这个具体矛盾直接指出，并补充账号历史、公开工作等背景，之后账号恢复。citeturn0reddit23
+近期案例中，有用户注意到 X 的自动回复写着“登录账号并按照步骤恢复”，但账号实际上处于永久暂停状态、无法执行那个步骤。后续申诉时，他把这个具体矛盾直接指出，最终获得恢复。
 
 因此收到自动邮件后，不要只看最后一句“你的账号不会恢复”。建议保存完整邮件，并检查：
 
@@ -182,7 +182,7 @@ AI 可以帮助整理语言、发现遗漏、提出需要核实的问题；但�
 - 没有证据就声称某个 OAuth 应用导致封号；
 - 因为一次自动回复就认定案件已经彻底结束；
 - 购买所谓“官方解封服务”；
-- 把 WhatsApp、Discord 私人客服等冒充官方支持的渠道当成申诉渠道。citeturn0search1
+- 把 WhatsApp、Discord 私人客服等冒充官方支持的渠道当成申诉渠道。
 
 ## 7. 给使用本项目的人
 
@@ -195,6 +195,24 @@ AI 可以帮助整理语言、发现遗漏、提出需要核实的问题；但�
 整理完成以后，再把材料交给 AI 一起讨论：哪些是事实、哪些需要补证、哪些只是可能性。最后，再让 AI 帮你把已经确认的事实整理成正式申诉信。
 
 这比让 AI 凭空“猜一个最容易解封的说法”可靠得多。
+
+## 8. 公开案例来源
+
+以下链接是本文引用的主要 Reddit 公开讨论。它们只是用户经验，不是 X 官方政策，也不能证明某种申诉方式具有稳定的因果效果。
+
+- [I got my suspended account back](https://www.reddit.com/r/twitterhelp/comments/1srjhia/i_got_my_suspended_account_back/)
+- [Appeal accepted regarding “Inauthentic Behavior”](https://www.reddit.com/r/twitterhelp/comments/1vfc07e/appeal_accepted_regarding_inauthentic_behavior/)
+- [Just got my inauthentic behavior suspension lifted](https://www.reddit.com/r/twitterhelp/comments/1vqa4xo/just_got_my_inauthentic_behavior_suspension_lifted/)
+- [Account suspension appeal](https://www.reddit.com/r/twitterhelp/comments/1txtvf7/account_suspension_appeal/)
+- [X restored my account after 2 weeks of “inauthentic behavior” suspensions](https://www.reddit.com/r/twitterhelp/comments/1w4qqu3/x_restored_my_account_after_2_weeks_of/)
+- [Got my account restored 2 days after getting banned for “inauthentic behavior”](https://www.reddit.com/r/twitterhelp/comments/1vsooqr/got_my_account_restored_2_days_after_getting/)
+- [ACCOUNT WAS RESTORED](https://www.reddit.com/r/twitterhelp/comments/1txebkq/account_was_restored/)
+
+## 9. 关于原文中的“乱码”
+
+此前版本误把内部检索系统使用的 `cite...` 引用标记直接写进了 Markdown 文件。这个标记只适用于当前对话界面，不属于 GitHub Markdown 语法，因此在 GitHub 上会直接显示成奇怪的字符。
+
+本版本已经移除这些内部引用标记，并改成普通 Markdown 链接；以后如果继续补充 Reddit 案例，也应使用公开 URL 或正常的 Markdown 引用，而不要把 ChatGPT 内部 citation token 写进仓库文件。
 
 ---
 
