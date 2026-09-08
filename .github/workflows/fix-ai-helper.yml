@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Patch AI helper
+      - name: Fix generated text line breaks
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -20,19 +20,15 @@ jobs:
           p=Path('index.html')
           s=p.read_text(encoding='utf-8')
           old=s
-          start=s.index('function buildAIPrompt()')
-          end=s.index('function clearAll()', start)
-          new="""function buildAIPrompt(){const report=reportLines().join('\\n');const appeal=document.getElementById('appeal')?.value||'';const prompt=`你是 X 账号申诉信编辑助手。请基于下面的自查资料，协助我整理一封简洁、事实性、诚实的账号申诉信。\n\n要求：\n1. 只使用资料中明确支持的事实，不虚构任何事件、权限、行为或平台规则。\n2. 明确区分“已确认事实”“异常信号”和“待调查推测”。\n3. 不要因为某个 OAuth 应用存在、授权时间接近异常事件，就直接推断它导致封禁；如证据不足，请明确写成未知或待复核。\n4. 不要代替平台判断是否违规；重点写清账号情况、已采取的安全措施，以及请求人工复核的事项。\n5. 如果资料不足，先列出最需要补充的 3—5 项信息，再给出申诉信草稿。\n6. 语言简洁、礼貌，不情绪化，不夸大，不威胁平台。\n\n【自查报告】\n${report}\n\n【我已经填写的申诉说明】\n${appeal}\n\n请先指出可能存在的事实缺口，然后给出一版可以直接修改后提交的申诉信。`;document.getElementById('aiPrompt').value=prompt}\nfunction copyAIPrompt(){const el=document.getElementById('aiPrompt');if(!el.value)buildAIPrompt();if(!navigator.clipboard||!navigator.clipboard.writeText){el.focus();el.select();alert('当前浏览器不支持一键复制，请手动复制提示词。');return}navigator.clipboard.writeText(el.value).then(()=>alert('提示词已复制。')).catch(()=>{el.focus();el.select();alert('复制失败，请手动复制提示词。')})}\n"""
-          s=s[:start]+new+s[end:]
-          s=s.replace("L.join('\\\n')", "L.join('\\n')")
-          s=s.replace("L.join('\\\\n')", "L.join('\\n')")
-          p.write_text(s,encoding='utf-8')
+          bad="L.join('\\\n')"
+          s=s.replace(bad, "L.join('\\n')")
           if s==old:
-            raise SystemExit('No changes made')
+            raise SystemExit('No broken line-join pattern found')
+          p.write_text(s,encoding='utf-8')
           subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
           subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
           subprocess.run(['git','add','index.html'],check=True)
-          subprocess.run(['git','commit','-m','fix: repair AI prompt line breaks [skip ci]'],check=True)
+          subprocess.run(['git','commit','-m','fix: restore generated report line breaks [skip ci]'],check=True)
           subprocess.run(['git','push'],check=True)
           PY
-# trigger: 2026-09-08
+# trigger: 2026-09-08b
