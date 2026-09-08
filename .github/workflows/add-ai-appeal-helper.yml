@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - index.html
+      - .github/workflows/add-ai-appeal-helper.yml
   workflow_dispatch:
 
 permissions:
