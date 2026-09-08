@@ -1,0 +1,65 @@
+name: Verify and repair buttons
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-buttons.yml'
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Diagnose and repair
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          start=s.index('<script>')+len('<script>')
+          end=s.index('</script>',start)
+          js=s[start:end]
+          Path('/tmp/app.js').write_text(js,encoding='utf-8')
+          PY
+          node --check /tmp/app.js || true
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          start=s.index('<script>')+len('<script>')
+          end=s.index('</script>',start)
+          js=s[start:end]
+          # Normalize the common malformed single-quote entry in esc().
+          old="function esc(v){return String(v??'').replace(/[&<>\\\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\\\"':'&quot;',\\\"'\\\":'&#39;'}[m]))}"
+          new="function esc(v){return String(v??'').replace(/[&<>\\\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\\\"':'&quot;',\"'\":'&#39;'}[m]))}"
+          if old in s:
+              s=s.replace(old,new,1)
+          else:
+              # Replace the whole function by boundaries, avoiding fragile quoting.
+              import re
+              s,n=re.subn(r"function esc\(v\)\{.*?\}\n", "function esc(v){return String(v??'').replace(/[&<>\\\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\\\"':'&quot;',\"'\":'&#39;'}[m]))}\n", s, count=1)
+              if n==0:
+                  raise SystemExit('esc() not found')
+          p.write_text(s,encoding='utf-8')
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          js=s.split('<script>',1)[1].split('</script>',1)[0]
+          Path('/tmp/app.js').write_text(js,encoding='utf-8')
+          PY
+          node --check /tmp/app.js
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'fix: repair JavaScript for record buttons [skip ci]' || true
+          git push
+      - name: Remove temporary workflow
+        if: always()
+        run: |
+          rm -f .github/workflows/verify-buttons.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A .github/workflows/verify-buttons.yml
+          git commit -m 'chore: remove temporary verification workflow [skip ci]' || true
+          git push || true
