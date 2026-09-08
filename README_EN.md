@@ -1,5 +1,7 @@
 # X Appeal Pre-Submission Checklist
 
+[🇬🇧 English](README_EN.md) · [🇨🇳 中文](README.md)
+
 An **offline-first, single-file, no-backend** investigation workspace for people preparing an appeal after an X / Twitter account suspension, restriction, or read-only state.
 
 > This is not an X product and cannot determine whether an account violated a rule. It cannot prove that an OAuth application, IP address, VPN, device, or other third-party factor caused a suspension. Its purpose is to help turn scattered clues into a traceable record.
