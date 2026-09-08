@@ -4,155 +4,144 @@
 
 > 本项目不是 X 官方工具，也不能判断账号是否违规、不能证明某个 OAuth 应用导致封禁。它的目标是帮助用户把零散线索整理成一条可核查的事实链。
 
-## 为什么做这个
+## 项目在做什么
 
-账号被限制或封禁后，最容易陷入两个极端：
+账号被限制或封禁后，最容易陷入两个极端：只反复申诉，却没有整理发生了什么；或者看到一个可疑的第三方应用，就直接把它当成“封禁原因”。
 
-- 只反复申诉，却没有整理发生了什么；
-- 看到一个可疑的第三方应用，就直接把它当成“封禁原因”。
+本项目采用一条尽量保守的调查流程：
 
-这个工具采用更保守的调查流程：
+**事实 → 线索 → 时间线 → 安全处置 → 证据 → 申诉 → 复盘**
 
-**事实 → 线索 → 时间关系 → 安全处置 → 证据 → 申诉**
+核心原则是：**OAuth 权限不是实际行为证据，时间接近也不等于因果关系。**
 
-尤其强调：**OAuth 权限不是实际行为证据，时间接近也不等于因果关系。**
+## 适合谁
 
-## 功能
+如果你的 X 账号出现以下情况，可以用它先整理材料：
 
-### 01 · 账号基础状态
+- 被 suspension / limited / read-only；
+- 收到 `inauthentic behavior`、spam、platform manipulation 等理由；
+- 申诉反复收到自动回复；
+- X 说“follow the on-screen instructions”，但实际没有可操作指示；
+- 收到“account restored”通知，但登录后仍无法正常使用；
+- 怀疑账号被盗、存在陌生登录或第三方 OAuth 授权；
+- 想在申诉前把时间线、证据和安全处置整理清楚。
 
-检查并记录用户名、头像、简介、邮箱/手机号变化、异常登录地点或陌生设备，以及无法解释的发帖、点赞、关注、取关、转发。
+## 推荐调查流程
 
-### 02 · OAuth / 第三方应用
+### 01 · 先记录账号现状
 
-逐项记录第三方授权应用：应用名称、开发者、授权时间、权限、是否认识、是否仍在使用、是否已撤销和调查备注。
+记录用户名、头像、简介、邮箱/手机号变化、异常登录地点或陌生设备，以及无法解释的发帖、点赞、关注、取关、转发等活动。
 
-工具不会把 `Read & Write` 等权限直接解释成“应用实施了某种操作”。
+### 02 · 检查 OAuth / 第三方应用
 
-### OAuth 自检提示：已连接的应用
+逐项记录应用名称、开发者、授权时间、权限、是否认识、是否仍在使用、是否已撤销和调查备注。
 
-如果你正在调查 X 账号的异常行为或封禁，建议亲自检查一次 X 账号的第三方授权列表：
+如果正在调查第三方授权，可以检查 X 的 **设置 → 安全性与账号访问权限 → 应用与会话 → 已连接的应用**。
 
-1. 进入 X 的 **设置 → 安全性与账号访问权限**。
-2. 找到 **应用与会话 → 已连接的应用**。
-3. 检查自己当前或过去授权过的第三方应用，并记录应用名称、权限、授权时间等信息。
-4. 如果你曾经使用过 [Twitter Family / Round Year Fun](https://roundyearfun.org/twitterfamily/)，可以特别核对已连接应用列表中是否出现以下名称：
-   - **Omit Smart Stone**
-   - **Your Tweets Beyond #6V12**
-5. 对不认识、已经停止使用或不再需要的应用，按照 X 提供的界面考虑撤销授权，并把撤销时间记录在本工具中。
+如果曾经使用过 [Twitter Family / Round Year Fun](https://roundyearfun.org/twitterfamily/)，可以特别核对是否出现 **Omit Smart Stone**、**Your Tweets Beyond #6V12** 等名称。
 
-> **重要：** 看到 `Omit Smart Stone`、`Your Tweets Beyond #6V12` 或其他陌生 OAuth 应用，**本身不能证明该应用导致了封禁，也不能证明它实际执行过某项操作**。它只是一个值得进一步核查的线索。应结合授权时间、权限范围、账号活动记录、登录记录和其他证据进行判断。
+> 看到陌生 OAuth 应用，**本身不能证明该应用导致封禁，也不能证明它实际执行过某项操作**。应结合授权时间、权限范围、账号活动记录、登录记录和其他证据判断。
 
-> 如果你从未使用过 Twitter Family / Round Year Fun，却在已连接应用中发现相关应用，更应该把它作为“未知授权”记录下来，而不是直接下结论。
+### 03 · 建立事件时间线
 
-### 03 · 事件时间线
+记录封禁/限制通知、OAuth 授权、登录事件、异常行为、安全处置、申诉和收到回复的时间。
 
-记录封禁/限制通知、OAuth 授权、登录事件、异常行为、安全处置和其他重要事件，用于发现时间上的关联，而不是自动推出因果。
+### 04 · 做安全处置
 
-### 04 · 异常行为检查
+确认密码、2FA、登录活动、会话、第三方应用、邮箱、手机号、账号共享和公共设备等情况。发现陌生授权或异常登录时，优先保护账号，再整理申诉材料。
 
-覆盖短时间大量关注、取关、点赞、转发、发帖、重复内容、自动化工具、API 等常见调查线索。
+### 05 · 建立证据台账
 
-### 05 · 账号安全处置
+记录证据名称、类型、保存位置/描述、对应事件和备注。尽量保留截图、邮件、通知、日志等原始材料，不要为了整理而修改原始证据。
 
-帮助确认密码、2FA、登录活动、会话、第三方应用、邮箱、手机号、账号共享和公共设备等安全事项。
+### 06 · 准备申诉材料
 
-### 06 · 证据台账
+完成事实检查清单，补充希望平台复核的事项和已经采取的安全措施，然后生成可复制的调查材料。
 
-记录证据名称、类型、保存位置/描述、对应事件和备注。**建议保留原始材料，不要为了整理而修改原始截图或邮件。**
+### 07 · 让 AI 协助复核，而不是替你制造事实
 
-### 07 · 申诉材料
+可以把生成的调查材料交给 AI，一起核对时间线、补充遗漏、区分事实与推测，再整理正式申诉信。
 
-用事实性的检查清单确认申诉前准备是否完整，并提供申诉说明编辑区。
+> **不要让 AI 凭空补充没有证据支持的事实。**
 
-### REPORT · 自查报告
+## 工具功能
 
-一键生成可复制、打印或保存为 PDF 的调查摘要。
+- 账号基础状态检查
+- OAuth / 第三方应用记录
+- 事件时间线
+- 异常行为检查
+- 账号安全处置记录
+- 证据台账，可反复补充
+- 申诉材料检查清单
+- 调查摘要生成
+- 一键复制材料
+- JSON 导入 / 导出
+- Markdown / 打印 / PDF 使用场景
+- 本地 `localStorage` 保存
+- 重置本次调查
+- 系统深色模式与响应式界面
 
-## Reddit 申诉经验与调查笔记
+## 公开信息收集
 
-项目另外整理了一份 **[Reddit 申诉经验与调查笔记](reddit-appeal-notes.md)**，记录公开 Reddit 案例中值得参考的申诉经验，并把我们这次调查中的 **Family Tree / Twitter Family / Round Year Fun** 问题一起归档。
+本项目另设一个独立的 **[信息收集](INFORMATION_COLLECTION.md)** 文档，用来记录公开网络上与 X suspension / appeal 相关的案例、渠道和调查线索。
 
-这份笔记特别强调：
+它与自查工具分开：
 
-- Reddit 用户的成功经验是个案，不是“解封公式”；
-- 多次申诉、重新组织材料、仔细阅读 X 的自动回复等经验可以作为参考，但不能直接推导因果；
-- 不应复制他人的申诉原文，更不能把某种措辞或申诉频率当成必胜技巧；
-- **Family Tree / Twitter Family 相关 OAuth 记录目前应作为调查线索，而不是直接写成封禁原因；**
-- OAuth 授权、权限范围、实际使用行为与 X 的 `inauthentic behavior` 判断之间，需要分别寻找证据。
+- **自查工具**：记录你自己的账号发生了什么；
+- **信息收集**：观察公开网络上别人发生了什么；
+- **调查框架**：规定如何区分事实、异常信号、推测和无法验证的内容。
 
-### 补充参考：X 上的相关经验分享
+信息收集目前重点观察：
 
-另有一篇 X 用户 **@sanshunyi** 发布的经验帖，作为本项目 Reddit 案例之外的补充参考：
+- `X suspended`
+- `inauthentic behavior`
+- `account restored`
+- `restored but still suspended`
+- `on-screen instructions` 缺失
+- `suspended → restored → suspended`
+- 多次申诉 / 自动拒绝
+- compromised / hacked account
+- OAuth / automation / VPN / IP 等用户提出的关联
+- Reddit、BBB、个人博客、X / Threads 等公开来源
+
+> **案例只是案例，不是解封公式。** 某个用户在某次申诉后恢复，不能证明其措辞、申诉次数、客户端、VPN、OAuth、Privacy 表单或其他行为导致恢复。
+
+## 参考资料
+
+项目目前已有四份互相分工的资料：
+
+- [信息收集](INFORMATION_COLLECTION.md)：公开案例、关键词、来源和主要信息收集手段；
+- [Reddit 申诉经验与调查笔记](reddit-appeal-notes.md)：Reddit 个案与 Family Tree / Twitter Family 调查笔记；
+- [官方规则与公开案例资料](official-and-community-references.md)：官方规则与精选社区案例；
+- [调查框架](INVESTIGATION_FRAMEWORK.md)：事实、异常信号、推测与无法验证内容的判断框架。
+
+另有一篇 X 用户 **@sanshunyi** 的公开经验帖作为补充参考：
 
 - [X 帖子：@sanshunyi / status 2083811048025661871](https://x.com/sanshunyi/status/2083811048025661871)
 
-> 该链接仅作为公开经验材料的入口。帖子内容、个人情况和处理结果都应结合原文自行判断，不能视为 X 官方政策或保证有效的申诉方法。
+以及一篇 Threads 用户关于“系统要求按照屏幕指示恢复，但实际上没有指示”的公开经验帖：
 
-> 本文档由 Lynn 整理思路，并委托 **ChatGPT / Sage 代笔**。其中的 Reddit 案例属于公开用户经验，不代表 X 官方政策，也不能保证某种方法能够恢复账号。
+- [Threads：X 账号恢复经验分享](https://www.threads.com/share/BAXxVkNoy-/)
 
-### 补充参考：Threads 上的 Privacy 表单个案
+### BBB：外部投诉渠道
 
-另有一篇 Threads 用户经验帖，描述了一个与本项目近期调查高度相关的情形：账号收到“按照屏幕上的指示操作来恢复访问权限”的提示，但用户称登录后没有出现相应的可操作指示；在多次正常申诉没有解决后，用户称通过 X 的 Privacy / account information 表单提交了“无法访问账号资料、因为系统没有显示恢复指示”的问题，之后账号恢复并重新获得发文能力。
+公开 BBB 资料中可以看到大量 X Corp 相关投诉，涉及 suspension、`inauthentic behavior`、自动申诉、账号恢复、被盗账号和 Premium 计费等问题。BBB 也在 2026 年针对 X Corp 标记了相关投诉模式。citeturn0search0turn0search1
 
-- [Threads：X 账号恢复经验分享](https://www.threads.com/share/BAXxVkNoy-)
+BBB 不是政府监管机构，也不能强制 X 解封账号。因此，本项目把 BBB 视为**额外的外部投诉 / 沟通渠道**，而不是“第二个申诉按钮”。
 
-这个案例**只作为用户自述的时间线和社区经验保存**。它不能证明 Privacy 表单比正常申诉更容易解封，也不能证明一定会转人工、触发 Arkose Challenge，或存在某种特定的 X 内部处理路径。
+提交任何外部投诉时，都应坚持事实、时间线和证据原则，并避免泄露不必要的个人敏感信息。
 
-X 的官方 Privacy / account information 表单可以作为真实数据访问或隐私问题的渠道，但如果用户实际遇到的是 suspended / limited / restricted account，应优先使用 X 官方提供的账号申诉流程；不要为了绕过申诉流程而虚构隐私问题。
+## 调查原则
 
-更值得参考的是它的调查结构：
-
-**系统要求 A → 实际界面出现 B → A 与 B 不一致 → 保存截图/时间线 → 描述具体问题 → 请求复核或修复。**
-
-详细的官方规则、社区案例以及这个 Threads 个案的事实/推测分层，见 **[官方规则与公开案例资料](official-and-community-references.md)**。
-
-## BBB.org 申诉：可以作为额外的外部投诉渠道
-
-在我们检索 X 相关公开投诉时，可以看到不少用户会在 **[Better Business Bureau（BBB）](https://www.bbb.org/)** 的 X Corp 页面提交投诉，把账号封禁、无法获得有效人工支持、订阅费用等问题作为 marketplace complaint 的一部分提出。BBB 的 X Corp 档案目前还显示，BBB 在 2026 年开始审查 X Corp 的相关投诉模式；BBB 指出的投诉主题包括缺乏有意义的封禁解释、申诉/客服渠道困难、封禁后继续计费以及账号恢复问题等。
-
-**但要注意：BBB 不是政府监管机构，也不能强制 X 解封账号。** BBB 自己明确说明，它是中立的第三方协调者，不替消费者或企业作裁决，也不能强迫企业采取某项行动。对于非 BBB Accredited 的企业，回应投诉也是自愿的。
-
-### 如果考虑通过 BBB 提交投诉
-
-建议把它当成“外部投诉 / 争议沟通渠道”，而不是“第二个 X 申诉按钮”：
-
-1. **先完成 X 官方申诉。** 在 BBB 投诉里明确写出你已经通过哪些官方渠道联系过 X、提交过几次申诉、最后一次联系时间，以及收到了什么回复。
-2. **写清楚事实和时间线。** 例如：账号何时被限制、X 给出的具体理由、官方申诉何时提交、是否收到自动回复、是否发生订阅计费问题等。避免只写“X 算法误判了我”。
-3. **提出具体、可执行的解决请求。** 比如请求人工复核账号、说明导致限制的具体活动、恢复账号权限，或者在确有订阅/计费争议时请求处理相关费用问题。
-4. **把证据留在自己手里。** 可以准备封禁截图、X 邮件、工单编号、订阅记录、申诉时间线等；不要为了让投诉看起来更有力而添加无法证明的推测。
-5. **不要把 OAuth 线索直接写成既定事实。** 如果你发现 Family Tree、Twitter Family、Round Year Fun 或其他第三方 OAuth 应用，应写成“调查发现的授权记录/待核查线索”，除非有独立证据证明实际行为与封禁有关。
-6. **避免泄露敏感个人信息。** BBB 投诉可能被转给企业，关闭后其文本还可能公开显示在 BBB 的商业档案中。因此不要在投诉正文里放身份证号码、完整电话号码、密码、验证码、信用卡号、私人住址等不必要信息。
-7. **提交前认真检查措辞。** 投诉提交后通常不能简单删除；提交内容应当是真实的个人经历，并且最好使用可验证的事实，而不是情绪化指控。
-8. **留意后续回复。** BBB 会把投诉转给企业并请求回应，具体时限和后续流程可能因地区而不同。
-
-### 我们目前看到的 BBB 案例有什么共同点？
-
-公开的 X Corp BBB 投诉中，确实能看到大量与账号限制相关的案例，例如：
-
-- `inauthentic behavior` / `platform manipulation` 等理由导致的限制；
-- 用户认为自己的账号被自动系统误判；
-- 多次通过 X 官方申诉却只收到自动回复；
-- 请求人工复核、解释具体触发原因或恢复账号；
-- 账号被盗/被第三方异常操作后遭到限制；
-- X Premium 订阅在账号受限后产生的退款或计费争议。
-
-这些案例可以帮助我们了解**别人是怎么描述问题的**，但不能证明“通过 BBB 就能解封”。公开档案中也存在不同处理结果，因此不能只挑成功或看起来成功的案例来总结“万能方法”。
-
-> **核心原则：BBB 投诉也应该遵循本项目的调查逻辑：事实 → 证据 → 已采取的措施 → 明确请求。** 不要为了增加压力而虚构违规、夸大损失、捏造“人工审核”承诺，或者把尚未证实的 OAuth 关联写成封禁原因。
-
-## 调查框架
-
-项目现在同时提供一份独立的 [调查框架](INVESTIGATION_FRAMEWORK.md)，把自查表背后的判断方法明确化：
-
-- **事实 / 异常信号 / 合理推测 / 无法验证** 分离；
-- 用问题清单检查“时间相关”是否被误写成“因果关系”；
-- 把 OAuth scope 理解为授权能力，而不是实际行为日志；
-- 将密码、2FA、会话检查、OAuth 撤销等安全处置纳入时间线；
-- 给证据台账增加“来源、对应事件、是否原始材料”等思考维度；
-- 明确列出调查中不应做的事情。
-
-这意味着项目不只是“把申诉材料列出来”，而是试图提供一个**小型、保守的账号安全调查框架**。
+1. **事实优先**：能确认的才写成事实。
+2. **区分状态**：明确的“有”、明确的“没有”和“未知 / 尚未核实”不能混为一谈。
+3. **不把权限当行为**：OAuth scope 说明授权能力，不等于实际调用记录。
+4. **不把相关当因果**：授权时间、VPN/IP、客户端变化与封禁时间接近，只能作为时间线线索。
+5. **保留原始证据**：截图、邮件、通知、日志等尽量保留原始版本。
+6. **安全处置优先**：发现陌生授权、异常登录或可疑活动时，先保护账号。
+7. **AI 只负责协助整理**：AI 可以帮助核对、归纳和组织语言，但不能代替证据。
+8. **成功与失败都记录**：不要只收集“成功模板”，失败案例同样有研究价值。
+9. **尊重公开案例当事人**：只整理公开可见信息，不进行骚扰、跟踪、曝光或隐私挖掘。
 
 ## 数据与隐私
 
@@ -164,208 +153,33 @@ X 的官方 Privacy / account information 表单可以作为真实数据访问�
 - 不调用第三方分析服务
 - 不包含网络请求
 - 自查状态使用浏览器 `localStorage` 保存
-- 支持 JSON 导出，方便备份或继续调查
+- 支持 JSON 导出
 
 如果在公共电脑上使用，离开前请清空本地数据；更稳妥的方式是先导出 JSON，再删除浏览器中的本地数据。
-
-## 使用方式
-
-直接打开 `index.html` 即可使用，也可以部署到 GitHub Pages 或其他静态网站托管服务。
-
-推荐流程：
-
-1. 完成账号基础状态检查。
-2. 检查并记录 OAuth / 第三方应用。
-3. 建立事件时间线。
-4. 标记异常信号并写备注。
-5. 完成账号安全处置。
-6. 建立证据台账。
-7. 阅读调查框架，区分事实、信号与推测。
-8. 准备事实性的申诉说明。
-9. 如有需要，再准备 BBB 等外部投诉材料，并与 X 官方申诉材料保持一致。
-10. 生成并保存自查报告。
-11. 保留 JSON 备份，方便继续调查。
-
-## 调查原则
-
-1. **事实优先**：能确认的才写成事实。
-2. **区分状态**：明确的“有”、明确的“没有”和暂时无法判断的“未知 / 尚未核实”不能混为一谈。
-3. **不把权限当行为**：OAuth scope 说明授权能力，不等于实际调用记录。
-4. **不把相关当因果**：授权时间与封禁时间接近，只能构成时间线线索。
-5. **保留原始证据**：截图、邮件、通知、日志等尽量保留原始版本。
-6. **安全处置优先**：发现陌生授权、异常登录或可疑活动时，先保护账号，再整理申诉材料。
-7. **AI 只负责协助整理**：可以把生成的调查材料交给 AI 一起核对、补充和组织语言，但不能让 AI 凭空补充没有证据支持的事实。
 
 ## 项目结构
 
 ```text
 x-appeal-checklist/
-├── index.html                    # 离线自查工具
-├── reddit-appeal-notes.md        # Reddit 案例与 Family Tree 调查笔记
+├── index.html                           # 离线自查工具
+├── INFORMATION_COLLECTION.md            # 公开案例与信息收集
+├── reddit-appeal-notes.md               # Reddit 案例与 Family Tree 调查笔记
 ├── official-and-community-references.md # 官方规则与公开案例资料
-├── INVESTIGATION_FRAMEWORK.md    # 调查方法与判断框架
-└── README.md                     # 项目说明
+├── INVESTIGATION_FRAMEWORK.md           # 调查方法与判断框架
+└── README.md                             # 项目说明
 ```
 
 ## 开源与署名
 
 本项目由 **Lynn** 发起并持续整理，部分调查资料、结构设计和文字由 Lynn 与 ChatGPT / Sage 共同完成。
 
-项目中的第三方案例均用于研究和参考，请以原始来源及 X 当前官方规则为准。
+公开案例均用于研究和参考，请以原始来源及 X 当前官方规则为准。
 
-## 案例搜索：X Suspended / 公开账号限制案例收集
+### 信息收集免责声明
 
-本节用于持续收集公开网络上与 `X suspended`、`Twitter suspended`、`inauthentic behavior`、`account restored`、`appeal rejected`、`on-screen instructions`、`read-only`、`suspended again` 等关键词相关的案例。
+本项目中的公开案例收集仅用于公开网络信息整理、研究与经验观察，不用于任何非法活动、骚扰、跟踪、曝光、侵犯隐私或规避平台安全机制。案例中的账号、个人经历和说法来自公开页面或当事人自述，不代表本项目认可其真实性、完整性或因果解释。
 
-### 免责声明
-
-> 本资料仅用于公开网络信息的整理、研究与经验观察，不用于任何非法活动、骚扰、跟踪、曝光、侵犯隐私或规避平台安全机制。案例中的账号、个人经历和说法均来自公开页面或当事人自述，不代表本项目或整理者认可其真实性、完整性或因果解释。如相关当事人认为内容涉及不适当的信息、隐私或其他合法权益，请联系项目维护者，我会在核实后考虑删除相关条目。
-
-### 当前检索到的案例
-
-#### 1. “恢复”后仍然 suspended / read-only
-
-公开案例中反复出现一种状态：用户收到 X 的“账号已恢复”通知，但重新登录后账号仍显示 suspended、无法发帖，或者处于 read-only 状态。
-
-- [Reddit：Inauthentic Behavior Suspension Progress](https://www.reddit.com/r/twitterhelp/comments/1unbrd6/inauthentic_behavior_suspension_progress/) — 用户记录收到多次恢复相关邮件，但实际账号状态仍未完全恢复。
-- [BBB：2025-12-21 suspension → 多次恢复邮件但仍显示 suspended](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=267) — 一名用户自述在收到三次恢复邮件后，账号仍显示 suspended。
-
-**记录原则：**“收到恢复通知”与“账号实际恢复”必须分开记录，不能直接把前者当成后者。
-
-#### 2. “按照屏幕上的指示操作”，但实际上没有指示
-
-这是目前检索中反复出现、且与本项目调查高度相关的状态异常。
-
-- [Reddit：X restored my account after 2 weeks of “inauthentic behavior” suspensions](https://www.reddit.com/r/twitterhelp/comments/1w4qqu3/x_restored_my_account_after_2_weeks_of/) — 用户称申诉重点包括“系统要求完成 on-screen instructions，但实际上没有相应步骤”，之后收到无违规并恢复完整功能的通知。
-- [BBB：2026-07-13 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=14) — 用户自述多次申诉收到近乎立即的自动回复，同时收到“登录并完成 on-screen instructions”的提示，但登录后没有对应恢复步骤，只显示 suspended/read-only。
-
-**记录原则：**不要把“指出缺失指示后恢复”直接写成因果关系；应记录为“界面状态异常 → 申诉内容变化 → 后续结果”的事件序列。
-
-#### 3. 恢复 → 再次 suspension
-
-- [TheZeal：X Suspends @TheZealNZ](https://thezeal.co.nz/article/x-suspends-thezealnz) — 该账号 2026-08-23 因 alleged “inauthentic behaviors” 被暂停，当日申诉后恢复；次日再次暂停；8 月 31 日再次被恢复；约五小时后又因同一理由被暂停。文章称截至 2026-09-02 仍处于 suspended 状态。
-- [BBB：用户自述约 18 次申诉，恢复后数分钟再次被封](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=14) — 用户称其中两次申诉后解除限制，但数分钟内再次被暂停，即使当时并未使用平台。
-
-**记录原则：**`restored = yes/no` 不够，建议同时记录恢复后的实际功能状态以及是否再次 suspension。
-
-#### 4. 自动化 / 快速拒绝 / 要求人工复核
-
-- [BBB：2026-03-24 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=163) — 用户自述多次申诉收到看起来自动化的回复，并请求人工复核和明确说明具体违规活动。
-- [BBB：2026-07-25 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews?page=3) — 用户称请求 manual review 后几乎立即收到拒绝，因此怀疑没有进行实际人工审查。
-
-**记录原则：**“回复很快”可以记录为观察到的时间关系，但不能仅凭速度证明没有人工参与。
-
-#### 5. 账号遭入侵 / 异常活动后 suspension
-
-- [BBB：2026-07-28 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews?page=3) — 用户自述账号曾被第三方入侵，攻击者发布 AI spam；用户随后修改密码、保护账号并删除未授权内容，但账号仍处于 suspension，并称没有可用的 on-screen recovery steps。
-- [BBB：2026-08-29 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews) — 用户自述账号被 compromise、攻击者修改邮箱，同时仍被收取 X Premium 费用，支持流程无法恢复账号。
-
-**记录原则：**账号被入侵后的活动、平台采取的限制措施和后续恢复是不同事件，应分别建立时间线。
-
-#### 6. VPN / IP / 网络环境：仅作为用户假设记录
-
-- [BBB：2026-08-03 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints) — 一名用户自述因地区网络限制使用动态 VPN，并认为 IP 变化可能与 automated security system 误判有关。
-- [BBB：2026-08-01 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews?page=3) — 用户同样把频繁切换 VPN 网络地址与 suspension 联系起来。
-
-**重要：**这些只是当事人的解释。公开案例本身不能证明“VPN / IP 变化导致 suspension”。应把它放在“用户假设 / 待验证因素”，而不是“已知触发机制”。
-
-#### 7. 老账号、正常使用与 inauthentic behavior
-
-- [BBB：2026-08-12 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=3) — 用户自述账号已经使用约 15 年，并称没有购买 followers、spam 或 automation，却因 inauthentic behavior / platform manipulation 被暂停。
-- [BBB：2026-04-04 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=156) — 用户自述账号因 inauthentic behavior 被暂停，并称长期只发布体育相关内容、没有使用第三方服务。
-
-**记录原则：**账号年龄、真实身份或长期正常使用都不能单独证明没有违规；它们只是案例背景。
-
-### 案例采集的统一字段
-
-后续新增案例时，尽量按以下字段记录：
-
-```text
-case_id
-source
-source_url
-date_found
-date_suspended
-suspension_reason
-account_age
-account_type
-appeal_count
-appeal_response
-on_screen_instructions
-actual_account_state
-restored_notice
-actual_restoration
-re_suspended
-security_event
-oauth
-vpn_or_ip_change
-device_or_client_change
-privacy_form
-bbb
-final_outcome
-user_claim
-independent_evidence
-causal_confidence
-```
-
-### 案例质量与因果判断
-
-这些案例不是实验数据，也不是 X 内部日志。它们大多属于用户自述、论坛讨论、投诉记录或个人文章，因此应该区分：
-
-- **可直接观察/引用的页面事实**：帖子发布时间、用户声称收到某封邮件、公开页面显示的文字等；
-- **当事人自述**：账号为何被封、自己是否使用 bot、自己认为哪个因素导致 suspension 等；
-- **时间关系**：某个操作发生在恢复前后；
-- **推测**：算法误判、某个 OAuth 应用触发、VPN 导致、人工审核介入等。
-
-尤其不要把下面这些表达直接当成事实：
-
-> “第五次申诉成功，所以第五次申诉导致恢复。”
-
-> “使用手机 App 后恢复，所以手机 App 解封了账号。”
-
-> “OAuth 应用出现在授权列表，所以它导致了 suspension。”
-
-更可靠的记录方式是：
-
-> **A 发生 → B 发生 → C 发生 → 随后账号状态发生变化；A/B/C 与结果存在时间关系，但公开证据不足以确认因果。**
-
-### 关键词扩展
-
-后续搜索可以继续围绕以下关键词展开，并加入不同语言：
-
-```text
-X suspended
-Twitter suspended
-X account suspended
-X account restored
-X restored but still suspended
-X read only account
-X ghost state suspended
-X inauthentic behavior
-X inauthentic activity
-X platform manipulation
-X appeal rejected
-X appeal denied
-X multiple appeals
-X suspended again
-X restored then suspended
-X on-screen instructions
-X no on-screen instructions
-X recovery instructions missing
-X account compromised suspended
-X hacked account suspended
-X VPN suspended
-X IP suspended
-X OAuth suspended
-Twitter OAuth suspended
-X third-party app suspended
-```
-
-中文、日文等语言也应分别搜索，因为不同地区用户的经验可能不会出现在同一个社区。
-
-### 来源
-
-本节案例主要来自公开的 Reddit、BBB、个人网站等页面。它们仅作为公开经验材料，不代表 X 官方政策，也不构成法律、技术或申诉结果保证。涉及具体账号或个人的信息时，以原始页面及当事人后续更正为准；如发现不适当或侵犯隐私的内容，请联系项目维护者申请核查与删除。
+如相关当事人认为收录内容涉及不适当的信息、隐私或其他合法权益，请联系项目维护者；经核实后会考虑删除或修改相关条目。
 
 ---
 
