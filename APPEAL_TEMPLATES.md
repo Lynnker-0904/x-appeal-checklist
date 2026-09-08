@@ -1,24 +1,28 @@
-# 申诉成功模板与来源（仅供参考）
+# X 账号申诉参考：模板、罕见个案与暂时结论
 
-> **重要说明**：本文不是 X 官方申诉模板，也不保证有效。这里收录的是公开网络中由账号持有人自述的成功案例，以及从多个案例中整理出的**可参考结构**。
+> **仅供参考。** 本文不是 X 官方申诉模板，也不提供“保证解封”的话术。
 >
-> 个案成功可能同时受到账号状态、时间、系统状态、验证流程、账号历史等因素影响。**不要机械复制模板，也不要为了套模板而虚构事实。**
+> 这份文档有意收录一些不那么典型、甚至彼此矛盾的公开个案。它们真正有价值的地方，不是告诉我们“哪句话最灵”，而是帮助我们观察：**同样的账号状态，为什么会出现完全不同的结果？**
+>
+> 案例来自公开网页中的账号持有人自述、社区讨论和公开投诉。除官方规则外，个案中的内部机制、因果解释通常都无法独立验证。因此本文始终区分：**发生了什么**，以及**当事人认为为什么发生**。
 
-## 一、官方流程优先
+---
 
-如果你认为账号被错误冻结、限制或封禁，应优先使用 X 官方提供的账号申诉流程。
+## 一、先把最重要的话说在前面
 
-- [X Help：关于已冻结的 X 账号](https://help.x.com/zh-cn/managing-your-account/suspended-x-accounts)
-- [X Help：Appeal a locked or suspended account](https://help.x.com/en/forms/account-access/appeals)
-- [X Help：Authenticity](https://help.x.com/en/rules-and-policies/authenticity)
+目前没有足够的公开证据支持“万能申诉模板”。
 
-下面的模板只是社区经验整理，**不是 X 官方要求，也不是所谓“解封密码”。**
+有人用了很短的说明后恢复；有人写了很长的账号历史后恢复；有人改变申诉角度后恢复；有人甚至表示自己最后一次提交的内容很随意。与此同时，也有人复制多个社区模板、让 AI 帮忙改写，仍然被自动拒绝。
+
+所以，这个文件不是“成功文案大全”。
+
+更准确地说，它是一个**案例观察册**：模板只是载体，个案之间的差异才是研究对象。
 
 ---
 
 ## 二、模板 A：简洁事实型
 
-这是根据多个公开案例中反复出现的要素整理出的**非原文模板**：
+如果你的情况很简单，可以从这个结构开始。它是根据公开案例归纳出的**非原文模板**：
 
 ```text
 Hello,
@@ -32,307 +36,395 @@ I believe this suspension may have been made in error. Please review the activit
 Thank you.
 ```
 
-只有其中事实确实适用于你的账号时才可以使用。
+只有事实确实适用于你的账号时才可以这样写。
 
-### 值得借鉴的结构
+它真正值得借鉴的是结构：
 
-- 账号是谁；
-- 账号如何使用；
-- 自己能确认的自动化 / 操纵行为情况；
-- 对误判的判断明确标成判断，而不是事实；
-- 请求复核具体触发行为。
+**账号是谁 → 平时怎么使用 → 对具体指控有什么可确认的回应 → 请求复核什么。**
+
+不是“写得像真人”，也不是“塞几个关键词”。
 
 ---
 
 ## 三、模板 B：有时间线时
 
-如果已经整理出清楚的时间线，可以使用更具体的结构：
+如果已经整理出了比较清楚的时间线，可以把申诉写成一份很短的事实摘要：
 
 ```text
 Hello,
 
 I am appealing the suspension of @USERNAME for alleged inauthentic behavior.
 
-The account has been operated by me as a personal account since YEAR. I do not use bots, automation tools, engagement services, or coordinated activity.
+The account has been operated by me since [YEAR]. My normal use of the account is [BRIEF DESCRIPTION].
 
-Before the suspension, the relevant events I can identify are:
-- DATE: [EVENT]
-- DATE: [EVENT]
-- DATE: [EVENT]
+Relevant events before the suspension:
+- [DATE] — [EVENT]
+- [DATE] — [EVENT]
+- [DATE] — [EVENT]
 
-I have also reviewed my account security, active sessions, and connected third-party applications. I have [describe only actions you actually took].
+I reviewed [ACCOUNT SECURITY / CONNECTED APPS / LOGIN ACTIVITY] and took the following actions:
+- [ACTION]
+- [ACTION]
 
-I have not identified any activity that would explain the enforcement. If possible, please manually review the activity that triggered the suspension and let me know what corrective action is required.
+I have not identified activity that explains the enforcement. If the suspension was triggered by a specific activity, I would appreciate a review of that activity and clear instructions for any corrective or verification step required.
 
 Thank you.
 ```
 
-重点不是“写得像真人”，而是让复核者能够核对事实。
+这里最重要的一句其实是：
 
-如果不知道某件事情，就写不知道；不要为了让申诉看起来完整而猜测。
+> **如果不知道，就写不知道。**
+
+不要为了让申诉显得完整而猜测内部原因。
 
 ---
 
 ## 四、模板 C：没有出现 on-screen instructions
 
-近期公开案例中，有用户报告自己多次收到要求“follow the on-screen instructions”的回复，但登录后实际上没有出现任何可操作的恢复步骤。该用户随后在申诉中明确指出这一矛盾，并自述账号恢复。原帖同时明确表示，作者自己也无法确定究竟是哪一因素导致恢复。
+这是目前比较值得单独保留的一种情况。
 
-来源：[Reddit：X restored my account after 2 weeks of “inauthentic behavior”](https://www.reddit.com/r/twitterhelp/comments/1w4qqu3/x_restored_my_account_after_2_weeks_of/)
+一些公开个案中，用户收到“follow the on-screen instructions”的回复，但登录后实际上没有出现任何可操作的步骤。个别用户随后在申诉中明确指出这个矛盾，并报告账号后来恢复。
 
-可以参考这种**问题描述方式**：
+可以参考这种**事实描述方式**：
 
 ```text
 I cannot resolve the alleged violation because no on-screen resolution or verification instructions are available when I log in.
 
 I have not been given a specific activity to correct or a verification step to complete.
 
-Please manually review the activity that triggered this enforcement and provide the appropriate instructions so I can comply with any required corrective action.
+Please review the activity that triggered this enforcement and provide the appropriate instructions so I can comply with any required corrective action.
 ```
 
-这里真正值得学习的是：**指出一个可以验证的系统/流程矛盾**，而不是复制这几句话。
+这里真正值得学习的是：**指出一个平台可以验证的具体问题。**
+
+不是“这几句话可以解封”。
 
 ---
 
-## 五、公开成功案例
+# 五、故意挑几个“不太正常”的案例
 
-### 1. ChatGPT 辅助的个人账号说明
+这一节不是挑最好看的成功故事，而是挑那些能够破坏“简单因果链”的案例。
 
-2026 年 6 月，一位 Reddit 用户分享了恢复后的申诉文本，并明确说明文本由 ChatGPT 协助形成。内容重点是账号长期由本人使用、发帖量有限，以及否认 bots、automation、third-party engagement services 和 coordinated activity。
+## 个案 1：第三轮换了叙述角度，结果变了
 
-来源：[Reddit：My account is restored from the “Inauthentic Behavior” suspension](https://www.reddit.com/r/twitterhelp/comments/1tuv07v/my_account_is_restored_from_the_inauthentic/)
+2026 年 8 月，一位用户记录了自己的第三轮恢复经历。前两次申诉没有成功；第三次没有继续重复原来的解释，而是把重点放在账号长期运营历史，以及此前同类情况曾经被恢复这一事实上。随后用户报告账号恢复。
 
-**参考价值：中等。**
+来源：
+- [Reddit：Got My Account Back (Again). Here's What Was Different This Time.](https://www.reddit.com/r/twitterhelp/comments/1vm22nk/got_my_account_back_again_heres_what_was/)
 
-这个案例能说明“事实说明 + 对具体指控回应”的结构可以被用户采用，但不能证明 ChatGPT 文案本身造成恢复。
+这个案例可以支持一个很弱、但合理的建议：**如果上一份申诉失败，不妨重新检查信息组织方式。**
 
----
+但它不能支持：
 
-### 2. 多次拒绝后恢复
+> “第三次申诉会进入人工审核。”
 
-2026 年 7 月，一位用户记录了账号因 `inauthentic behavior` 被暂停后，前几次申诉被拒，之后账号最终恢复的经历。该案例还涉及另一个账号也被暂停，说明账号之间的状态并不一定同步。
-
-来源：[Reddit：Update: My account was restored after multiple rejected appeals](https://www.reddit.com/r/twitterhelp/comments/1utko9j/update_my_account_was_restored_after_multiple/)
-
-**参考价值：中等。**
-
-它支持的是“被拒绝并不意味着之后绝对不会恢复”这一观察，而不能支持“第 N 次申诉必然成功”。
+因为我们看不到 X 内部的处理路径。
 
 ---
 
-### 3. 第二次申诉后两天恢复：反例也很重要
+## 个案 2：收到恢复通知后，几分钟内又被封
 
-2026 年 8 月，一位用户称账号因 `inauthentic behavior` 被封，两天后恢复；但其本人描述申诉内容甚至是随便填写的，并无法说明为什么恢复。
+公开讨论中有人报告：账号先收到恢复通知，随后在重新使用账号后再次进入 `inauthentic behavior` 状态；甚至还有用户描述自己几乎没有进行新的操作，账号也再次被暂停。
 
-来源：[Reddit：Got my account restored 2 days after getting banned for “inauthentic behavior”](https://www.reddit.com/r/twitterhelp/comments/1vsooqr/got_my_account_restored_2_days_after_getting/)
+来源：
+- [Reddit：June 2026 /r/Twitter Mega Open Thread](https://www.reddit.com/r/Twitter/comments/1ttvgs/june_2026_rtwitter_mega_open_thread_for/)
 
-**参考价值：低，但研究价值很高。**
+这个案例最重要的不是“恢复后不能点赞”。没有足够证据证明这一点。
 
-这个案例恰好提醒我们：如果“随机文字”也可能与恢复在时间上相邻，那么我们就不能从单个成功案例推出“某个模板导致恢复”。
+真正值得记录的是：
 
----
+**suspended → restored → usable / partially usable → suspended again**
 
-### 4. 一个更典型的失败对照组
-
-2026 年 6 月，另一位用户表示自己已经提交 4 次申诉，其中 3 次使用社区模板、1 次使用 Grok 编写的文本，但仍然只有自动拒绝。
-
-来源：[Reddit：“Inauthentic behaviors” suspension, 4 appeals and 3 automatic rejections](https://www.reddit.com/r/twitterhelp/comments/1ubv2xh/inauthentic_behaviors_suspension_4_appeals_and_3/)
-
-**参考价值：很高。**
-
-因为它与“用了模板 → 成功”的案例构成了一个天然对照：**模板存在并不等于模板有效。**
+这条状态链本身就是一个值得调查的现象。
 
 ---
 
-### 5. 恢复通知 ≠ 实际恢复
+## 个案 3：邮件说 restored，网页却仍然 suspended
 
-2026 年 7 月，有用户记录收到多次 `account restored` 通知，但账号实际上仍处于只读 / Ghost State；其他用户也报告类似情况。
+公开论坛中有用户记录过多次类似状态错位：邮件称账号已经恢复，实际登录后仍显示 suspended；清除 cookies 和 cache 后，状态也没有立即改变。
 
-来源：[Reddit：Inauthentic Behavior Suspension Progress](https://www.reddit.com/r/twitterhelp/comments/1unbrd6/inauthentic_behavior_suspension_progress/)
+来源：
+- [Secret Projects Forum：Anyone else been suspended from X for 'inauthentic behaviors'?](https://www.secretprojects.co.uk/threads/anyone-else-been-suspended-from-x-for-inauthentic-behaviors.51831/)
 
-BBB 上也存在类似公开投诉：用户称已经收到 X 的恢复邮件，但浏览器或 App 仍显示 suspended，无法发帖、点赞或正常使用。
+这个个案对本项目特别重要，因为它告诉我们：
 
-来源：[BBB：X Corp complaints](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints)
+> **“收到恢复邮件”不是一个足够精确的状态定义。**
 
-**参考价值：很高。**
+以后记录案例时，至少应该拆成：
 
-这说明调查“申诉是否成功”时，不能只记录邮件，还应该记录**实际账号状态和功能**。
-
----
-
-### 6. 恢复后再次被暂停
-
-公开社区中还存在“恢复数小时后再次被暂停”的案例。有用户甚至报告自己几乎没有重新使用账号，账号仍再次进入 `inauthentic behavior` 状态。
-
-来源：[Reddit：Update. 3 hours after having my account restored its inauthentic again](https://www.reddit.com/r/twitterhelp/comments/1vo30uf/update_3_hours_after_having_my_account_restored/)
-
-另有类似案例记录了恢复后再次暂停的循环：[Reddit：My X account keeps getting permanently suspended for inauthentic behaviors](https://www.reddit.com/r/twitterhelp/comments/1vlb6b2/my_x_account_keeps_getting_permanently_suspended/)
-
-**参考价值：很高。**
-
-这意味着“恢复”最好定义成一个可观察状态，而不是一封邮件。
+- 是否收到 restoration email；
+- 登录页面是什么状态；
+- 能不能发帖；
+- 能不能点赞 / 转发；
+- 能不能搜索；
+- followers / following 是否恢复；
+- 是否再次进入 suspension。
 
 ---
 
-## 六、BBB 公开投诉中的“申诉结构”
+## 个案 4：封了几年，后来突然恢复
 
-BBB 上可以看到不少用户采用类似的事实型结构，例如：
+一位用户称自己的账号在 2023 年被封，之后长期没有进展；到了 2026 年重新提交申诉，最终突然收到恢复通知。用户自己也无法解释原因，只能认为可能是运气。
 
-- 账号什么时候被暂停；
-- X 给出的具体理由；
-- 自己实际如何使用账号；
-- 是否使用 bots / automation / engagement services；
-- 已经提交过多少次官方 appeal；
-- 收到的是人工回复还是疑似自动回复；
-- 系统要求的 on-screen instructions 是否真的存在；
-- 最后明确提出希望 X **review / investigate / restore** 什么。
+来源：
+- [Reddit：Twitter/X has finally restored my suspended account after years of appealing](https://www.reddit.com/r/twitterhelp/comments/1r1h273/twitterx_has_finally_restored_my_suspended/)
 
-例如，一份 2026 年 7 月的公开投诉详细描述了账号历史、实际使用方式、申诉次数、自动拒绝，以及“邮件要求按照屏幕指示操作、但登录后没有任何指示”的矛盾，并请求人工复核。
+这类案例很“反模板”。
 
-来源：[BBB：X Corp complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=14)
+如果我们只盯着恢复前最后一次操作，很容易得出：
 
-另一份公开投诉则明确列出了自己希望 X 检查的内容：人工复核账号活动、检查证明活动真实的证据，以及在无法证明违规时恢复账号。
+> “就是最后那封申诉信起作用了。”
 
-来源：[BBB：X Corp complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=84)
+但这个案例恰恰提醒我们：当时间跨度很长时，队列、系统状态、历史案件、重新处理等未知变量都可能变化。
 
-> BBB 投诉是社区/消费者材料，不是 X 官方申诉模板，也不能证明这些措辞带来了恢复。
+**最后一个动作 ≠ 已证明的原因。**
 
 ---
 
-## 七、从这一轮案例里，可以暂时推出什么？
+## 个案 5：成功者自己都不知道最后写了什么
 
-### 结论 1：目前没有证据支持“万能申诉模板”
+还有用户报告在提交十多次申诉后最终恢复，同时改变过登录环境，例如退出桌面端、暂时不用 VPN、改用官方手机 App。更关键的是，当事人自己表示已经记不清最后一次申诉具体写了什么，也认为可能只是巧合。
 
-成功案例的文本差异很大：有人写得很详细，有人很简短，有人使用 AI 协助，有人甚至自称填写了非常随意的内容；与此同时，也有人复制多个模板仍然失败。
+这类案例反而很有研究价值。
 
-**所以目前最多能推出：清晰、真实、与案件相关的事实说明值得优先使用；不能推出某一套固定措辞有稳定成功率。**
+因为当事人没有把结果包装成“我的方法有效”，而是留下了不确定性。
 
----
+正确的记录方式应该是：
 
-### 结论 2：比“态度诚恳”更有价值的是“可核查”
-
-多个案例反复出现的有效信息结构不是漂亮话，而是：
-
-**账号情况 → 实际行为 → 时间线 → 已采取的安全措施 → 具体系统问题 → 明确请求。**
-
-尤其是“没有 on-screen instructions”这类问题，如果确实存在，可以直接描述，因为它是一个可以被平台验证的具体事实，而不是单纯说“我是好人”。
-
----
-
-### 结论 3：申诉次数与成功之间存在观察上的关联，但不能证明因果
-
-公开案例里既有一次/两次申诉后恢复，也有多次拒绝后恢复，还有十几次申诉仍未恢复的案例。
-
-因此，“第三次一定成功”“连续提交会提高概率”“每隔两天提交一次最好”都不能从现有公开样本中得到可靠支持。
-
-**申诉次数应该作为时间线变量记录，而不是当成操作公式。**
-
----
-
-### 结论 4：真正值得单独调查的是“恢复后的状态”
-
-目前公开案例中反复出现一个很重要的现象：
-
-**收到 restored → 实际仍 suspended / read-only → 后续又恢复或再次被暂停。**
-
-所以本项目以后统计案例时，应该把：
-
-- restoration email；
-- 登录状态；
-- 发帖能力；
-- 点赞 / 转发能力；
-- 账号设置权限；
-- 是否再次 suspension；
-
-分别记录，而不能只用一个 `restored = yes/no` 表示。
-
----
-
-### 结论 5：成功案例更适合用来研究“信息结构”，而不是复制“成功动作”
-
-这是本文件最核心的结论。
-
-我们目前能比较可靠地学习的是：
-
-> **什么信息值得交给复核者？**
+> `客户端 / VPN / 申诉次数 / 提交时间` 都发生了变化；随后账号恢复。
 
 而不是：
 
-> **别人做了什么，所以我也做同样的事情就能解封。**
+> `关闭 VPN + 使用手机 App → 解封。`
 
-前者可以形成调查方法；后者很容易变成幸存者偏差。
+前者是观察，后者已经偷偷加入了因果结论。
 
 ---
 
-## 八、一个更适合本项目的申诉骨架
+## 个案 6：几乎不发帖，只浏览和点赞，也出现 inauthentic behavior
 
-如果把公开案例压缩成一个“结构模板”，我更推荐下面这个，而不是复制某个人的原文：
+公开讨论中有用户描述自己长期不发帖，只浏览、点赞、给朋友发送内容，仍然突然进入 `inauthentic behavior` suspension。
+
+来源：
+- [Reddit：June 2026 /r/Twitter Mega Open Thread](https://www.reddit.com/r/Twitter/comments/1ttvgs/june_2026_rtwitter_mega_open_thread_for/)
+
+这个案例不能证明“点赞会触发封禁”。
+
+它能提醒我们的是：**不要预设某一种使用方式就天然不可能触发风控。**
+
+遇到类似情况，与其猜系统为什么封，不如如实记录自己的实际使用方式，请平台复核具体触发活动。
+
+---
+
+# 六、一个很重要的失败对照组
+
+2026 年的公开讨论中，有用户表示自己提交过多次申诉，使用过社区模板，也尝试过 AI 帮助生成的文字，但仍然遭遇自动拒绝。
+
+这类案例和“模板成功”案例放在一起看，比单独看成功故事更有意义。
+
+它至少说明：
+
+> **“用了模板”不是一个足够解释结果的变量。**
+
+因此，本项目不应该把成功模板做成“复制即用”的固定答案，而应该保留成功和失败两组样本。
+
+---
+
+# 七、从这些案例里，目前能推出什么？
+
+## 结论 1：没有证据证明某一套话术具有稳定成功率
+
+公开案例中的文字差异非常大：短说明、长叙事、AI 辅助、再次申诉、改变角度，甚至“自己都不知道最后写了什么”都出现过。
+
+因此，目前比较稳妥的结论只有：
+
+> **真实、清晰、与案件直接相关的事实，比“神奇关键词”更值得优先保留。**
+
+但这仍然不是成功率证明。
+
+---
+
+## 结论 2：申诉应该像案件摘要，而不是作文
+
+最有用的信息通常可以压缩成：
+
+**账号情况 → 实际使用方式 → 相关时间线 → 安全处置 → 具体异常 → 请求平台复核什么。**
+
+这也是为什么本项目先做自查，再生成材料，最后才写申诉信。
+
+---
+
+## 结论 3：申诉次数可以研究，但目前不能优化成公式
+
+公开案例里既有一次、两次就恢复的，也有第三次、第五次甚至更多次后恢复的；同时也有提交十多次仍然没有结果的。
+
+所以：
+
+- “第三次一定人工”——没有证据；
+- “每隔两天提交一次最好”——没有证据；
+- “连续提交越多越容易恢复”——没有证据。
+
+**申诉次数是一个观察变量，不是操作指南。**
+
+---
+
+## 结论 4：真正值得单独研究的是“恢复后的状态”
+
+现在公开案例里反复出现：
+
+`restored email → still suspended`
+
+以及：
+
+`restored → partially usable → suspended again`
+
+因此，“是否恢复”最好拆成多个状态，而不是一个布尔值。
+
+这甚至可以成为本项目下一步统计案例时的字段设计：
 
 ```text
-1. Account
-   - @username
-   - account type / history
-
-2. Enforcement
-   - suspension date
-   - exact reason shown by X
-
-3. Actual use
-   - how I normally use the account
-   - relevant automation / third-party services, if any
-
-4. Investigation
-   - security checks completed
-   - suspicious login / OAuth findings, if any
-   - relevant timeline
-
-5. Specific problem
-   - what X told me to do
-   - what actually happens when I log in
-   - what information or recovery step is missing
-
-6. Request
-   - review the relevant activity
-   - clarify the issue if possible
-   - provide the required corrective / verification steps
-   - restore the account if no violation is found
+restoration_notice
+login_state
+posting_available
+engagement_available
+search_available
+followers_restored
+re_suspended
 ```
 
-这个骨架的优势是：**它可以根据真实案件填充，而不是强迫每个人变成同一个“模板用户”。**
+---
+
+## 结论 5：罕见个案最大的价值，是帮我们杀掉错误的因果解释
+
+一个成功案例最容易让人产生错觉：
+
+> “他做了 X，然后恢复，所以 X 有效。”
+
+而一个反例可以直接破坏这个推论。
+
+例如：
+
+- 有人用了模板成功；也有人用了模板失败；
+- 有人第三次成功；也有人十几次仍失败；
+- 有人关闭 VPN 后恢复；也有人根本没改变环境；
+- 有人收到 restored 邮件后正常使用；也有人仍然 suspended；
+- 有人恢复后马上再次被封。
+
+**所以，反例不是噪音。反例本身就是研究资料。**
 
 ---
 
-## 九、与本项目自查工具的关系
+# 八、目前最推荐的“申诉骨架”
 
-推荐顺序：
+如果需要一封可以真正提交的文字，建议把它当作**案件摘要**：
 
-**先自查 → 整理时间线 → 核对安全 → 保存证据 → 参考公开案例 → 让 AI 一起复盘 → 再整理申诉 → 提交。**
+```text
+Hello,
 
-如果完全不知道从哪里开始，可以先打开：
+I am appealing the suspension of @USERNAME for [EXACT REASON SHOWN BY X].
 
-- [X 账号申诉前自查表](https://lynnker-0904.github.io/x-appeal-checklist/)
-- [X 官方冻结账号帮助](https://help.x.com/zh-cn/managing-your-account/suspended-x-accounts)
-- [X 官方申诉表](https://help.x.com/en/forms/account-access/appeals)
+I have operated this account since [YEAR / PERIOD]. My normal use of the account is [BRIEF, FACTUAL DESCRIPTION].
 
-> **模板是参考，不是答案。调查过程本身才是重点。**
+Relevant events before the suspension:
+- [DATE] — [EVENT]
+- [DATE] — [EVENT]
+- [DATE] — [EVENT]
+
+I reviewed [ACCOUNT SECURITY / CONNECTED APPS / LOGIN ACTIVITY / OTHER RELEVANT ITEMS] and took these actions:
+- [ACTION]
+- [ACTION]
+
+I have not identified activity that explains the enforcement. If the suspension was triggered by a specific activity, I would appreciate a review of that activity and clear instructions for any corrective or verification step required.
+
+Thank you.
+```
+
+### 语言上，尽量做到四件事
+
+1. **说你知道的。**
+2. **明确你不知道的。**
+3. **把已经做过的检查写出来。**
+4. **把希望平台复核的对象说清楚。**
+
+少写：
+
+- “I am a loyal X user.”
+- “I promise I would never…”
+- “Your AI made a mistake.”
+- “I have done absolutely nothing wrong.”
+- “Please urgently restore my account.”
+
+不是这些句子一定错误，而是它们的信息密度通常很低。
+
+申诉不是作文比赛。
 
 ---
 
-## 十、免责声明与来源说明
+# 九、阅读这些案例时，建议始终问三个问题
 
-本文仅收集和整理公开网络中的账号持有人自述、公开投诉和官方帮助页面，用于研究、经验观察和申诉材料整理。
+### ① 这是事实，还是当事人的解释？
 
-公开案例存在明显的幸存者偏差、选择偏差和信息不完整问题。账号持有人通常不知道 X 内部到底采用了什么检测规则，因此“我做了 X，所以 X 解封了”通常只能作为个人解释，不能直接视为因果证据。
+“我在 9 月 3 日收到恢复邮件”是事实性自述。
 
-本项目不鼓励：
+“因为我关闭 VPN，所以系统把我转给真人”是因果解释。
 
-- 虚构违规原因或安全事件；
-- 编造 OAuth / 登录 / IP / VPN 证据；
-- 冒充其他人；
-- 骚扰 X 员工或公开案例当事人；
-- 通过虚假隐私请求规避平台审核；
-- 使用所谓“代解封”服务。
+两者不能放在同一证据等级。
 
-如果原始来源作者认为收录内容涉及不适当的信息、隐私或其他合法权益，请联系项目维护者；经核实后会考虑删除或修改相关条目。
+### ② 有没有反例？
+
+如果十个人都说某方法有效，先找一个用了同样方法却失败的人。
+
+如果找得到，那个反例比第十一个成功故事更有信息量。
+
+### ③ 恢复到底意味着什么？
+
+是收到邮件？
+
+是能登录？
+
+是能发帖？
+
+还是所有功能、followers、历史内容都恢复？
+
+不先定义“恢复”，不同案例其实无法直接比较。
+
+---
+
+# 十、来源质量
+
+本文优先级如下：
+
+1. **X 官方页面**：用于确认官方流程和规则；
+2. **账号持有人第一手记录**：用于记录具体个案；
+3. **论坛 / Reddit**：用于寻找罕见现象、反例和不同处理结果；
+4. **BBB 等公开投诉**：用于观察用户如何描述问题和请求；
+5. **商业博客**：最多作为搜索线索，不作为内部机制或成功率的证据。
+
+尤其要警惕：
+
+> “我做了 A，之后发生了 B，所以 A 导致了 B。”
+
+个案通常只能证明前半句。
+
+---
+
+# 十一、官方入口
+
+- [X Help：关于已冻结的 X 账号](https://help.x.com/zh-cn/managing-your-account/suspended-x-accounts)
+- [X Help：Appeal a locked or suspended account](https://help.x.com/en/forms/account-access/appeals)
+- [X Help：Authenticity](https://help.x.com/en/rules-and-policies/authenticity)
+
+**官方流程优先。** 社区案例只能帮助理解可能遇到的情况，不能替代 X 的实际处理流程。
+
+---
+
+# 十二、免责声明
+
+本文仅用于公开信息整理、研究和申诉材料准备，不用于任何非法活动、骚扰、跟踪、曝光、侵犯隐私或规避平台安全机制。
+
+文中的案例来自公开页面及当事人自述。个案可能存在遗漏、误解或无法独立验证的部分；本文不保证其真实性，也不认可当事人对内部系统原因的推测。
+
+如果相关当事人认为收录内容涉及不适当的信息、隐私或其他合法权益，请联系项目维护者；经核实后会考虑删除或修改相关内容。
 
 ---
 
