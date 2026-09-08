@@ -213,6 +213,160 @@ x-appeal-checklist/
 
 项目中的第三方案例均用于研究和参考，请以原始来源及 X 当前官方规则为准。
 
+## 案例搜索：X Suspended / 公开账号限制案例收集
+
+本节用于持续收集公开网络上与 `X suspended`、`Twitter suspended`、`inauthentic behavior`、`account restored`、`appeal rejected`、`on-screen instructions`、`read-only`、`suspended again` 等关键词相关的案例。
+
+### 免责声明
+
+> 本资料仅用于公开网络信息的整理、研究与经验观察，不用于任何非法活动、骚扰、跟踪、曝光、侵犯隐私或规避平台安全机制。案例中的账号、个人经历和说法均来自公开页面或当事人自述，不代表本项目或整理者认可其真实性、完整性或因果解释。如相关当事人认为内容涉及不适当的信息、隐私或其他合法权益，请联系项目维护者，我会在核实后考虑删除相关条目。
+
+### 当前检索到的案例
+
+#### 1. “恢复”后仍然 suspended / read-only
+
+公开案例中反复出现一种状态：用户收到 X 的“账号已恢复”通知，但重新登录后账号仍显示 suspended、无法发帖，或者处于 read-only 状态。
+
+- [Reddit：Inauthentic Behavior Suspension Progress](https://www.reddit.com/r/twitterhelp/comments/1unbrd6/inauthentic_behavior_suspension_progress/) — 用户记录收到多次恢复相关邮件，但实际账号状态仍未完全恢复。
+- [BBB：2025-12-21 suspension → 多次恢复邮件但仍显示 suspended](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=267) — 一名用户自述在收到三次恢复邮件后，账号仍显示 suspended。
+
+**记录原则：**“收到恢复通知”与“账号实际恢复”必须分开记录，不能直接把前者当成后者。
+
+#### 2. “按照屏幕上的指示操作”，但实际上没有指示
+
+这是目前检索中反复出现、且与本项目调查高度相关的状态异常。
+
+- [Reddit：X restored my account after 2 weeks of “inauthentic behavior” suspensions](https://www.reddit.com/r/twitterhelp/comments/1w4qqu3/x_restored_my_account_after_2_weeks_of/) — 用户称申诉重点包括“系统要求完成 on-screen instructions，但实际上没有相应步骤”，之后收到无违规并恢复完整功能的通知。
+- [BBB：2026-07-13 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=14) — 用户自述多次申诉收到近乎立即的自动回复，同时收到“登录并完成 on-screen instructions”的提示，但登录后没有对应恢复步骤，只显示 suspended/read-only。
+
+**记录原则：**不要把“指出缺失指示后恢复”直接写成因果关系；应记录为“界面状态异常 → 申诉内容变化 → 后续结果”的事件序列。
+
+#### 3. 恢复 → 再次 suspension
+
+- [TheZeal：X Suspends @TheZealNZ](https://thezeal.co.nz/article/x-suspends-thezealnz) — 该账号 2026-08-23 因 alleged “inauthentic behaviors” 被暂停，当日申诉后恢复；次日再次暂停；8 月 31 日再次被恢复；约五小时后又因同一理由被暂停。文章称截至 2026-09-02 仍处于 suspended 状态。
+- [BBB：用户自述约 18 次申诉，恢复后数分钟再次被封](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=14) — 用户称其中两次申诉后解除限制，但数分钟内再次被暂停，即使当时并未使用平台。
+
+**记录原则：**`restored = yes/no` 不够，建议同时记录恢复后的实际功能状态以及是否再次 suspension。
+
+#### 4. 自动化 / 快速拒绝 / 要求人工复核
+
+- [BBB：2026-03-24 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=163) — 用户自述多次申诉收到看起来自动化的回复，并请求人工复核和明确说明具体违规活动。
+- [BBB：2026-07-25 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews?page=3) — 用户称请求 manual review 后几乎立即收到拒绝，因此怀疑没有进行实际人工审查。
+
+**记录原则：**“回复很快”可以记录为观察到的时间关系，但不能仅凭速度证明没有人工参与。
+
+#### 5. 账号遭入侵 / 异常活动后 suspension
+
+- [BBB：2026-07-28 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews?page=3) — 用户自述账号曾被第三方入侵，攻击者发布 AI spam；用户随后修改密码、保护账号并删除未授权内容，但账号仍处于 suspension，并称没有可用的 on-screen recovery steps。
+- [BBB：2026-08-29 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews) — 用户自述账号被 compromise、攻击者修改邮箱，同时仍被收取 X Premium 费用，支持流程无法恢复账号。
+
+**记录原则：**账号被入侵后的活动、平台采取的限制措施和后续恢复是不同事件，应分别建立时间线。
+
+#### 6. VPN / IP / 网络环境：仅作为用户假设记录
+
+- [BBB：2026-08-03 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints) — 一名用户自述因地区网络限制使用动态 VPN，并认为 IP 变化可能与 automated security system 误判有关。
+- [BBB：2026-08-01 customer review](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/customer-reviews?page=3) — 用户同样把频繁切换 VPN 网络地址与 suspension 联系起来。
+
+**重要：**这些只是当事人的解释。公开案例本身不能证明“VPN / IP 变化导致 suspension”。应把它放在“用户假设 / 待验证因素”，而不是“已知触发机制”。
+
+#### 7. 老账号、正常使用与 inauthentic behavior
+
+- [BBB：2026-08-12 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=3) — 用户自述账号已经使用约 15 年，并称没有购买 followers、spam 或 automation，却因 inauthentic behavior / platform manipulation 被暂停。
+- [BBB：2026-04-04 complaint](https://www.bbb.org/us/tx/bastrop/profile/social-media-marketing/x-corp-0825-1000230350/complaints?page=156) — 用户自述账号因 inauthentic behavior 被暂停，并称长期只发布体育相关内容、没有使用第三方服务。
+
+**记录原则：**账号年龄、真实身份或长期正常使用都不能单独证明没有违规；它们只是案例背景。
+
+### 案例采集的统一字段
+
+后续新增案例时，尽量按以下字段记录：
+
+```text
+case_id
+source
+source_url
+date_found
+date_suspended
+suspension_reason
+account_age
+account_type
+appeal_count
+appeal_response
+on_screen_instructions
+actual_account_state
+restored_notice
+actual_restoration
+re_suspended
+security_event
+oauth
+vpn_or_ip_change
+device_or_client_change
+privacy_form
+bbb
+final_outcome
+user_claim
+independent_evidence
+causal_confidence
+```
+
+### 案例质量与因果判断
+
+这些案例不是实验数据，也不是 X 内部日志。它们大多属于用户自述、论坛讨论、投诉记录或个人文章，因此应该区分：
+
+- **可直接观察/引用的页面事实**：帖子发布时间、用户声称收到某封邮件、公开页面显示的文字等；
+- **当事人自述**：账号为何被封、自己是否使用 bot、自己认为哪个因素导致 suspension 等；
+- **时间关系**：某个操作发生在恢复前后；
+- **推测**：算法误判、某个 OAuth 应用触发、VPN 导致、人工审核介入等。
+
+尤其不要把下面这些表达直接当成事实：
+
+> “第五次申诉成功，所以第五次申诉导致恢复。”
+
+> “使用手机 App 后恢复，所以手机 App 解封了账号。”
+
+> “OAuth 应用出现在授权列表，所以它导致了 suspension。”
+
+更可靠的记录方式是：
+
+> **A 发生 → B 发生 → C 发生 → 随后账号状态发生变化；A/B/C 与结果存在时间关系，但公开证据不足以确认因果。**
+
+### 关键词扩展
+
+后续搜索可以继续围绕以下关键词展开，并加入不同语言：
+
+```text
+X suspended
+Twitter suspended
+X account suspended
+X account restored
+X restored but still suspended
+X read only account
+X ghost state suspended
+X inauthentic behavior
+X inauthentic activity
+X platform manipulation
+X appeal rejected
+X appeal denied
+X multiple appeals
+X suspended again
+X restored then suspended
+X on-screen instructions
+X no on-screen instructions
+X recovery instructions missing
+X account compromised suspended
+X hacked account suspended
+X VPN suspended
+X IP suspended
+X OAuth suspended
+Twitter OAuth suspended
+X third-party app suspended
+```
+
+中文、日文等语言也应分别搜索，因为不同地区用户的经验可能不会出现在同一个社区。
+
+### 来源
+
+本节案例主要来自公开的 Reddit、BBB、个人网站等页面。它们仅作为公开经验材料，不代表 X 官方政策，也不构成法律、技术或申诉结果保证。涉及具体账号或个人的信息时，以原始页面及当事人后续更正为准；如发现不适当或侵犯隐私的内容，请联系项目维护者申请核查与删除。
+
 ---
 
 **本项目是在 2026 年 9 月 7 日晚 Lynn 本人第三次申诉失败后启动的，和 Sage 一起自查，希望对大家有所帮助。**
