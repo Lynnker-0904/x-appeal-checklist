@@ -1,7 +1,6 @@
 # Lynn 的 X 申诉记录
 
 > 本文件用于记录本次账号申诉过程中实际发送的申诉内容与结果。
->
 > 这不是“成功申诉模板”，也不代表某一种措辞一定有效。它只是我们的实际案例记录，方便后续比较不同申诉内容、时间、渠道和结果。
 
 ## Account
@@ -60,6 +59,39 @@ I respectfully request a human review of the activity flagged as inauthentic, in
 这里最重要的变化是：**把“解释”变成了一个可以被平台内部日志验证的调查请求。**
 
 这并不意味着这种写法一定会成功。X 官方说明，认为账号被错误暂停的用户可以提交 appeal；官方也说明，真实用户的账号有时会被错误暂停，而被怀疑遭到入侵/盗用的账号也可能因为安全风险而被暂停。 [X Help — About suspended accounts](https://help.x.com/en/managing-your-account/suspended-x-accounts)
+
+## Backup angle — login/session activity
+
+这是下一次申诉失败后准备保留的另一个调查角度，**目前不作为已证明的封禁原因**。
+
+Lynn 最近重新登录查看账号状态时注意到，账号的登录/会话记录已经超过 200 条。这个账号使用时间较长，而且 Lynn 有一个长期的个人使用习惯：**通常不会主动退出网页端账号，而是让已经登录的网页长期保持登录状态，偶尔打开或刷新页面。**
+
+因此，登录/会话记录数量本身不能直接解释为异常登录，也不能据此断言 X 是因为“登录次数太多”而进行 enforcement。
+
+如果下一次申诉仍然无效，可以从这个角度提出一个更具体的人工复核请求：
+
+> 账号长期保持网页端登录，因此历史登录/会话记录数量较多。请不要仅依据记录数量判断异常行为；如这些登录/会话活动与本次 enforcement 有关，请核查其具体设备、会话、IP/网络来源以及实际活动，并区分正常的持续登录行为与真正的异常访问或自动化行为。
+
+推荐的英文表述方向：
+
+```text
+My account has been in use for a long time, and I normally keep my web session signed in rather than repeatedly logging out. As a result, my account contains a large number of historical login/session records.
+
+I would appreciate it if these records were reviewed based on their actual devices, sessions, network sources, and associated activity, rather than the number of login records alone. If any of this activity was considered relevant to the enforcement, please distinguish normal long-term web sessions from unauthorized access or automated activity.
+```
+
+### Evidence handling
+
+目前这个角度只有一个明确事实：**登录/会话记录数量很多，以及长期保持网页登录的使用习惯。**
+
+以下内容在没有后台证据前都只能作为假设：
+
+- “200 多条登录记录触发了风控”；
+- “网页长期挂着会被系统判定为机器人”；
+- “刷新网页会生成一条新的异常登录”；
+- “登录记录多导致了 inauthentic behavior suspension”。
+
+如果后续再次申诉时使用这一角度，重点应该是**请求 X 核查日志，而不是自行认定触发机制**。
 
 ## Current observation — September 9, 2026
 
