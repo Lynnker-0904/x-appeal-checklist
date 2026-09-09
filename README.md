@@ -117,13 +117,14 @@
 
 ## 参考资料
 
-项目目前已有五份互相分工的资料：
+项目目前已有六份互相分工的资料：
 
 - [信息收集](INFORMATION_COLLECTION.md)：公开案例、关键词、来源和主要信息收集手段；
 - [申诉成功模板与来源](APPEAL_TEMPLATES.md)：公开成功案例、失败对照、可参考申诉结构，以及基于案例比较得出的暂时结论；
 - [Reddit 申诉经验与调查笔记](reddit-appeal-notes.md)：Reddit 个案与 Family Tree / Twitter Family 调查笔记；
 - [官方规则与公开案例资料](official-and-community-references.md)：官方规则与精选社区案例；
-- [调查框架](INVESTIGATION_FRAMEWORK.md)：事实、异常信号、推测与无法验证内容的判断框架。
+- [调查框架](INVESTIGATION_FRAMEWORK.md)：事实、异常信号、推测与无法验证内容的判断框架；
+- [Lynn 的实际申诉记录](APPEAL_HISTORY.md)：前三次失败申诉的记录，以及第四次申诉的完整原文与后续结果追踪。
 
 另有一篇 X 用户 **@sanshunyi** 的公开经验帖作为补充参考：
 
@@ -174,6 +175,7 @@ x-appeal-checklist/
 ├── index.html                           # 离线自查工具
 ├── INFORMATION_COLLECTION.md            # 公开案例与信息收集
 ├── APPEAL_TEMPLATES.md                  # 申诉模板与公开案例比较
+├── APPEAL_HISTORY.md                    # Lynn 的实际申诉记录
 ├── reddit-appeal-notes.md               # Reddit 案例与 Family Tree 调查笔记
 ├── official-and-community-references.md # 官方规则与公开案例资料
 ├── INVESTIGATION_FRAMEWORK.md           # 调查方法与判断框架
@@ -192,47 +194,6 @@ x-appeal-checklist/
 本项目中的公开案例收集仅用于公开网络信息整理、研究与经验观察，不用于任何非法活动、骚扰、跟踪、曝光、侵犯隐私或规避平台安全机制。案例中的账号、个人经历和说法来自公开页面或当事人自述，不代表本项目认可其真实性、完整性或因果解释。
 
 如相关当事人认为收录内容涉及不适当的信息、隐私或其他合法权益，请联系项目维护者；经核实后会考虑删除或修改相关条目。
-
----
-
-## Lynn 的实际申诉记录
-
-> 这一部分不是“成功模板”，而是本项目维护者自己的实际申诉记录。它用于记录真实尝试、失败和后续结果，不应被理解为任何保证有效的解封方法。
-
-### 前三次申诉
-
-前三次申诉没有保存原文，因此不对内容进行补写或推测。
-
-可以确认的是：**前三次申诉均失败，收到的回复非常快，表现为明显的自动化 / 机器人式回复。** 由于没有保存完整邮件内容，我们不把具体措辞、提交时间或其他细节写成事实。
-
-### 第四次申诉 · 计划发送
-
-本次申诉计划在**芝加哥时间的工作时段**发送，并尽量与**美国德克萨斯州的正常工作时间**重合。发送后记录实际发送时间、回复时间、回复内容以及账号状态变化。
-
-**Account: @lynnrebic**
-
-> On August 31, 2026, I mistakenly authorized two third-party OAuth apps with Read & Write access. One was “Your Tweets Beyond #6V12,” linked to a Twitter Family Tree service, which posted two tweets on my behalf without my knowledge or intent. It was authorized at approximately 9:56 AM GMT+8. I also found another Read & Write authorization, “Omit Smart Stone,” approved at 11:32:42 AM GMT+8.
->
-> I want to clarify that granting access was a mistake and does not mean I knowingly intended the actions performed by these apps.
->
-> After my suspension, I identified these apps and attempted to revoke their access, but could not because my account was suspended. Please revoke their access on my behalf.
->
-> I respectfully request a human review of the activity flagged as inauthentic, including the API/activity logs from August 31 to September 3, to determine whether any flagged activity originated from these third-party apps rather than from me.
-
-### 第四次申诉结果
-
-- 实际发送时间：待记录
-- 回复时间：待记录
-- 回复内容：待记录
-- 是否人工处理：待验证
-- 账号状态变化：待记录
-- 是否恢复：待记录
-
-### 这次记录为什么值得保留
-
-本次申诉不以“某个神奇关键词”或某个第三方渠道为核心，而是提出了可以被 X 内部记录验证的具体问题：**是否存在来自第三方 OAuth 应用的实际活动，以及这些活动是否与被标记为 inauthentic 的行为重合。**
-
-这仍然不是在声称 OAuth 应用一定导致了封禁。它只是把一个可以核查的事实假设交给平台复核。
 
 ---
 
