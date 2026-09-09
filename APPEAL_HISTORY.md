@@ -59,7 +59,7 @@ I respectfully request a human review of the activity flagged as inauthentic, in
 
 这里最重要的变化是：**把“解释”变成了一个可以被平台内部日志验证的调查请求。**
 
-这并不意味着这种写法一定会成功。X 官方说明，认为账号被错误暂停的用户可以提交 appeal；官方也说明，真实用户的账号有时会被错误暂停，而被怀疑遭到入侵/盗用的账号也可能因为安全风险而被暂停。urlX Help — About suspended accountshttps://help.x.com/en/managing-your-account/suspended-x-accounts
+这并不意味着这种写法一定会成功。X 官方说明，认为账号被错误暂停的用户可以提交 appeal；官方也说明，真实用户的账号有时会被错误暂停，而被怀疑遭到入侵/盗用的账号也可能因为安全风险而被暂停。 [X Help — About suspended accounts](https://help.x.com/en/managing-your-account/suspended-x-accounts)
 
 ## Result
 
