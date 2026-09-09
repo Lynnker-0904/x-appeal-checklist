@@ -184,7 +184,111 @@ AI 可以帮助整理语言、发现遗漏、提出需要核实的问题；但�
 - 购买所谓“官方解封服务”；
 - 把 WhatsApp、Discord 私人客服等冒充官方支持的渠道当成申诉渠道。
 
-## 7. 给使用本项目的人
+## 7. 2026-09 新增：自动拒绝、登出状态与申诉渠道案例
+
+这一节开始专门记录**申诉 routing / 状态变化**，而不是只记录申诉文本。
+
+### 7.1 目前能确认的现象：秒拒并非 Lynn 个案
+
+2026 年 4 月的一则 `r/twitterhelp` 帖子记录了一个账号因 “inauthentic behavior” 被暂停后，第一次提交 appeal 几乎立即收到 “This account will not be restored.” 的自动回复。说明“提交后秒拒”至少在公开案例中反复出现，并不能单独作为某个账号申诉失败的特殊证据。
+
+来源：
+- [X account suspended for “inauthentic behavior” — instant appeal rejection](https://www.reddit.com/r/twitterhelp/comments/1sfh5x1/x_account_suspended_for_inauthentic_behavior/)
+
+### 7.2 多次自动拒绝后仍可能恢复
+
+2026-09-01 的公开案例中，一名账号因 “inauthentic behaviors” 被暂停，连续多次申诉都得到相同拒绝。后来他不再重复解释原事件，而是直接指出 X 邮件要求其完成 “on-screen instructions”，但账号锁定后根本没有这些指示，并要求人工复核。随后收到“没有违规并已恢复完整功能”的回复。
+
+这说明：
+
+> **多次自动拒绝 ≠ 已经证明账号永久不可恢复。**
+
+但同样不能反推“指出这一矛盾”就是唯一恢复原因。
+
+来源：
+- [X restored my account after 2 weeks of “inauthentic behavior” suspensions](https://www.reddit.com/r/twitterhelp/comments/1w4qqu3/x_restored_my_account_after_2_weeks_of/)
+
+### 7.3 2026-09-08：一个与本案高度相关的“登出 + 官方 App”案例
+
+2026-09-08 的最新公开案例中，一名 4 年老账号因 “inauthentic content/behavior” 被暂停；第一次申诉后曾恢复，但随后又立即重新暂停。之后用户进行了大约 10 次申诉，全部收到拒绝。
+
+该用户后来采取了完全不同的操作环境：
+
+1. 退出桌面端 session；
+2. 使用 Brave 浏览器的桌面环境不再保持登录；
+3. **连续 2–3 天完全保持登出；**
+4. 之后第一次通过个人手机的官方 X App 登录；
+5. 直接在 App 内提交 appeal；
+6. 随后账号恢复。
+
+原帖作者自己明确表示：这可能只是巧合，也不能保证对其他人有效。因此本项目把它记录为**案例变量**，而不是“解封方法”。
+
+来源：
+- [UPDATE! Account Restored Finally.](https://www.reddit.com/r/twitterhelp/comments/1wanoze/update_account_restored_finally/)
+
+### 7.4 “恢复后立即再次被封”也是一个独立变量
+
+2026-05-31 的公开讨论中，有用户描述账号成功恢复后，仅仅点赞一条内容，约 20 分钟后再次被暂停；另有用户表示恢复后尽量停止互动，等待系统状态稳定。
+
+这类案例提示我们把：
+
+**恢复成功**
+
+与
+
+**恢复后稳定使用**
+
+分开记录。前者不能证明后者已经解决。
+
+来源：
+- [account suspended due to “inauthentic behavior” and my first appeal was unsuccessful](https://www.reddit.com/r/twitterhelp/comments/1tsskly/account_suspended_due_to_inauthentic_behavior_and/)
+- [My account is restored from the “Inauthentic Behavior” suspension](https://www.reddit.com/r/twitterhelp/comments/1tuv07v/my_account_is_restored_from_the_inauthentic/)
+
+### 7.5 频率问题：目前没有证据证明“申诉太频繁 = 一定更难恢复”
+
+公开案例同时存在：
+
+- 多次申诉后恢复；
+- 长时间重复申诉仍无结果；
+- 暂停一段时间不申诉后恢复；
+- 申诉间隔受到系统限制；
+- 自动拒绝循环；
+- 最终通过不同渠道恢复。
+
+因此目前不能把“申诉频率”写成确定的因果变量。
+
+更准确的记录方式是：
+
+> **Appeal frequency = 待观察变量。**
+
+如果账号在高频申诉后进入秒拒循环，我们记录这一相关性；但只有大量跨账号案例能够控制其他变量后，才有资格讨论因果关系。
+
+### 7.6 本项目新增数据字段
+
+以后如果继续收集公开案例，除了原有字段外，增加：
+
+| 字段 | 内容 |
+|---|---|
+| Suspension reason | 具体封禁理由 |
+| Account age | 账号年龄 |
+| Appeal count | 截至成功/失败时的申诉次数 |
+| Appeal interval | 相邻申诉之间的时间 |
+| Auto-reject | 是否秒回/快速自动拒绝 |
+| Response delay | 从提交到回复的时间 |
+| Login state before appeal | 申诉前是否保持登录/完全登出 |
+| Desktop / Mobile | 使用桌面网页还是官方 App |
+| Browser | 如 Chrome / Brave 等（若用户主动提供） |
+| VPN / network | 是否主动提及 VPN/网络环境；没有证据则留空 |
+| New evidence | 本次申诉是否新增事实/证据 |
+| Appeal wording | 是否重复原文、是否改变叙事 |
+| Restoration | 是否恢复 |
+| Re-suspension | 恢复后是否再次暂停 |
+| Time to re-suspension | 恢复到再次暂停的时间 |
+| Stable restoration | 是否最终进入稳定可用状态 |
+
+> **数据原则：只记录用户公开描述的事实；不把社区猜测填进事实字段。**
+
+## 8. 给使用本项目的人
 
 如果你也被 X 以 “inauthentic behavior” 或类似理由暂停，先不要急着写一封很长的情绪化申诉信。
 
@@ -196,7 +300,7 @@ AI 可以帮助整理语言、发现遗漏、提出需要核实的问题；但�
 
 这比让 AI 凭空“猜一个最容易解封的说法”可靠得多。
 
-## 8. 公开案例来源
+## 9. 公开案例来源
 
 以下链接是本文引用的主要 Reddit 公开讨论。它们只是用户经验，不是 X 官方政策，也不能证明某种申诉方式具有稳定的因果效果。
 
@@ -207,8 +311,12 @@ AI 可以帮助整理语言、发现遗漏、提出需要核实的问题；但�
 - [X restored my account after 2 weeks of “inauthentic behavior” suspensions](https://www.reddit.com/r/twitterhelp/comments/1w4qqu3/x_restored_my_account_after_2_weeks_of/)
 - [Got my account restored 2 days after getting banned for “inauthentic behavior”](https://www.reddit.com/r/twitterhelp/comments/1vsooqr/got_my_account_restored_2_days_after_getting/)
 - [ACCOUNT WAS RESTORED](https://www.reddit.com/r/twitterhelp/comments/1txebkq/account_was_restored/)
+- [UPDATE! Account Restored Finally.](https://www.reddit.com/r/twitterhelp/comments/1wanoze/update_account_restored_finally/)
+- [X account suspended for “inauthentic behavior” — instant appeal rejection](https://www.reddit.com/r/twitterhelp/comments/1sfh5x1/x_account_suspended_for_inauthentic_behavior/)
+- [account suspended due to “inauthentic behavior” and my first appeal was unsuccessful](https://www.reddit.com/r/twitterhelp/comments/1tsskly/account_suspended_due_to_inauthentic_behavior_and/)
+- [My account is restored from the “Inauthentic Behavior” suspension](https://www.reddit.com/r/twitterhelp/comments/1tuv07v/my_account_is_restored_from_the_inauthentic/)
 
-## 9. 关于原文中的“乱码”
+## 10. 关于原文中的“乱码”
 
 此前版本误把内部检索系统使用的 `cite...` 引用标记直接写进了 Markdown 文件。这个标记只适用于当前对话界面，不属于 GitHub Markdown 语法，因此在 GitHub 上会直接显示成奇怪的字符。
 
