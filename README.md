@@ -195,6 +195,47 @@ x-appeal-checklist/
 
 ---
 
+## Lynn 的实际申诉记录
+
+> 这一部分不是“成功模板”，而是本项目维护者自己的实际申诉记录。它用于记录真实尝试、失败和后续结果，不应被理解为任何保证有效的解封方法。
+
+### 前三次申诉
+
+前三次申诉没有保存原文，因此不对内容进行补写或推测。
+
+可以确认的是：**前三次申诉均失败，收到的回复非常快，表现为明显的自动化 / 机器人式回复。** 由于没有保存完整邮件内容，我们不把具体措辞、提交时间或其他细节写成事实。
+
+### 第四次申诉 · 计划发送
+
+本次申诉计划在**芝加哥时间的工作时段**发送，并尽量与**美国德克萨斯州的正常工作时间**重合。发送后记录实际发送时间、回复时间、回复内容以及账号状态变化。
+
+**Account: @lynnrebic**
+
+> On August 31, 2026, I mistakenly authorized two third-party OAuth apps with Read & Write access. One was “Your Tweets Beyond #6V12,” linked to a Twitter Family Tree service, which posted two tweets on my behalf without my knowledge or intent. It was authorized at approximately 9:56 AM GMT+8. I also found another Read & Write authorization, “Omit Smart Stone,” approved at 11:32:42 AM GMT+8.
+>
+> I want to clarify that granting access was a mistake and does not mean I knowingly intended the actions performed by these apps.
+>
+> After my suspension, I identified these apps and attempted to revoke their access, but could not because my account was suspended. Please revoke their access on my behalf.
+>
+> I respectfully request a human review of the activity flagged as inauthentic, including the API/activity logs from August 31 to September 3, to determine whether any flagged activity originated from these third-party apps rather than from me.
+
+### 第四次申诉结果
+
+- 实际发送时间：待记录
+- 回复时间：待记录
+- 回复内容：待记录
+- 是否人工处理：待验证
+- 账号状态变化：待记录
+- 是否恢复：待记录
+
+### 这次记录为什么值得保留
+
+本次申诉不以“某个神奇关键词”或某个第三方渠道为核心，而是提出了可以被 X 内部记录验证的具体问题：**是否存在来自第三方 OAuth 应用的实际活动，以及这些活动是否与被标记为 inauthentic 的行为重合。**
+
+这仍然不是在声称 OAuth 应用一定导致了封禁。它只是把一个可以核查的事实假设交给平台复核。
+
+---
+
 **本项目是在 2026 年 9 月 7 日晚 Lynn 本人第三次申诉失败后启动的，和 Sage 一起自查，希望对大家有所帮助。**
 
 **审校：Anker**
